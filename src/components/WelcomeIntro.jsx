@@ -1,43 +1,31 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { t } from "@/i18n/t";
 
 export default function WelcomeIntro({ messages, onFinish, locale }) {
   const [show, setShow] = useState(true);
-
-  const startedRef = useRef(false);
-  const finishedRef = useRef(false);
-
+  const calledRef = useRef(false);
   const isRTL = locale === "ar";
 
   useEffect(() => {
-    // ✅ prevents running twice (Strict Mode)
-    if (startedRef.current) return;
-    startedRef.current = true;
-
-    const DISPLAY_MS = 3500;
-    const EXIT_MS = 650;
-
-    const timer = setTimeout(() => {
-      setShow(false);
-
-      // ✅ call onFinish after exit animation completes
-      setTimeout(() => {
-        if (!finishedRef.current && typeof onFinish === "function") {
-          finishedRef.current = true;
-          onFinish();
-        }
-      }, EXIT_MS);
-    }, DISPLAY_MS);
-
+    const timer = setTimeout(() => setShow(false), 3500);
     return () => clearTimeout(timer);
-  }, [onFinish]);
+  }, []);
 
   return (
-    <AnimatePresence mode="wait">
+    <AnimatePresence
+      mode="wait"
+      onExitComplete={() => {
+        // ✅ ضمان مرة واحدة فقط
+        if (!calledRef.current && typeof onFinish === "function") {
+          calledRef.current = true;
+          onFinish();
+        }
+      }}
+    >
       {show && (
         <motion.div
           key="welcomeIntro"
@@ -61,8 +49,7 @@ export default function WelcomeIntro({ messages, onFinish, locale }) {
           <div
             className="pointer-events-none absolute inset-0 opacity-[0.05]"
             style={{
-              backgroundImage:
-                "radial-gradient(#ffffff 1px, transparent 1px)",
+              backgroundImage: "radial-gradient(#ffffff 1px, transparent 1px)",
               backgroundSize: "22px 22px",
             }}
           />
@@ -85,7 +72,7 @@ export default function WelcomeIntro({ messages, onFinish, locale }) {
               <div className="relative z-10 rounded-full bg-white/5 border border-white/10 backdrop-blur-md w-full h-full flex items-center justify-center">
                 <Image
                   src="/images/logo-only.png"
-                  alt="Logo"
+                  alt="Ali Al Khajeh Logo"
                   width={92}
                   height={92}
                   priority

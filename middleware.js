@@ -1,15 +1,17 @@
 import { NextResponse } from "next/server";
 
-export function middleware(request) {
-  const acceptLanguage = request.headers.get("accept-language") || "";
-  const isArabic = acceptLanguage.toLowerCase().includes("ar");
+export function middleware(req) {
+  const { pathname } = req.nextUrl;
 
-  const locale = isArabic ? "ar" : "en";
+  // ✅ لو داخل /ar أو /en خلاص
+  if (pathname.startsWith("/ar") || pathname.startsWith("/en")) {
+    return NextResponse.next();
+  }
 
-  const url = request.nextUrl.clone();
-  url.pathname = `/${locale}`;
+  const accept = req.headers.get("accept-language") || "";
+  const isArabic = accept.toLowerCase().includes("ar");
 
-  return NextResponse.redirect(url);
+  return NextResponse.redirect(new URL(isArabic ? "/ar" : "/en", req.url));
 }
 
 export const config = {

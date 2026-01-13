@@ -1,15 +1,12 @@
-import { notFound } from "next/navigation";
-
-const locales = ["en", "ar"];
+import { getMessages } from "@/i18n/getMessages";
 
 export default async function LocaleLayout({ children, params }) {
   const { locale } = await params;
-
-  if (!locales.includes(locale)) notFound();
+  const messages = getMessages(locale);
 
   return (
-    <html lang={locale} dir={locale === "ar" ? "rtl" : "ltr"}>
-      <body>{children}</body>
-    </html>
+    <div dir={locale === "ar" ? "rtl" : "ltr"} lang={locale}>
+      {children}
+    </div>
   );
 }
