@@ -1,0 +1,163 @@
+{
+  "home": {
+    "title": "Welcome",
+    "subtitle": "This is the English version of the website"
+  },
+  "welcome": {
+    "title1": "Welcome",
+    "title2": "Ali Alkhajeh",
+    "subtitle": "Premium legal expertise and professional notary services — fast, confidential, and reliable.",
+    "enter": "Entering..."
+  },
+    "nav": {
+        "Contact":"Contact",
+    "why": "Why Us",
+    "services": "Services",
+    "steps": "Steps",
+    "faq": "FAQ",
+    "reviews": "Testimonials"
+  },
+    "hero": {
+    "title": "Authenticate your contracts and official transactions\nfrom wherever you are",
+    "desc": "A licensed private notary. We save you the hassle of waiting and crowded offices — we come to you wherever you are to complete your transaction immediately.",
+    "badges": {
+      "licensed": "Officially Licensed",
+      "confidential": "Highly Confidential",
+      "fast": "Fast Service"
+    }
+  },
+   "contact": {
+    "title": " Request a Private Notary",
+    "name": "Full Name",
+   
+    "subject": "Subject",
+    "subjects": {
+      "familyLaw": " Power of Attorney (General/Special)",
+      "personalInjury": " Company Formation Contracts",
+      "criminalLaw": " Declarations and Waivers",
+      "Other": "Other"
+    },
+    "message": "Message...",
+    "btn": "Make An Appointment"
+  },
+    "awards": {
+    "sectionTitle": "Officially Approved & Licensed By",
+    "items": {
+      "lawyersAssociation": "Lawyers Association",
+      "ministryOfJustice": "Ministry of Justice",
+      "abuDhabiJudicialDepartment": "Abu Dhabi Judicial Department"
+    }
+  },
+"whyChoose": {
+  "kicker": "Why Us",
+  "title": "Why Choose a Private Notary Public?",
+  "imageAlt": "Smart solutions that save your time and effort",
+  "cards": {
+    "confidentiality": {
+      "title": "We Come to You Anywhere",
+      "desc": "Whether you're in your office, home, or anywhere in Abu Dhabi, we come to you to complete the notarization."
+    },
+    "strategy": {
+      "title": "Flexible Appointments",
+      "desc": "We operate outside official working hours and during holidays to fit your busy schedule."
+    },
+    "results": {
+      "title": "Instant Approval",
+      "desc": "Our services are 100% legal and immediately approved by all government entities and banks."
+    }
+  },
+  "quote": {
+    "text": "“The best legal service I've ever received — fast, professional, and trustworthy.”",
+    "author": "— Client Feedback"
+  }
+},
+"services": {
+  "title": "What Transactions Do We Notarize?",
+  "items": {
+    "business": {
+      "title": "General & Special Power of Attorney"
+    },
+    "family": {
+      "title": "Company Incorporation Contracts"
+    },
+    "insurance": {
+      "title": "Meeting Minutes"
+    },
+    "industrial": {
+      "title": "Waiver & Debt Declarations"
+    },
+    "auction": {
+      "title": "Ship & Boat Sale Contracts"
+    },
+    "employment": {
+      "title": "Legal Notices"
+    }
+  }
+},
+"process": {
+  "kicker": "How Does It Work?",
+  "title": "3 Simple Steps Away from Document Notarization",
+  "steps": {
+    "review": {
+      "title": "Contact Us",
+      "desc": "Call us or fill out the form to choose the transaction type and the best time."
+    },
+    "strategy": {
+      "title": "Prepare Documents",
+      "desc": "Our team reviews contract or power of attorney drafts to ensure legal compliance."
+    },
+    "action": {
+      "title": "Notarization at Your Location",
+      "desc": "The notary visits your location for instant signing and official stamping."
+    }
+  }
+},
+"faq": {
+  "title": "Frequently Asked Questions",
+  "subtitle": "Quick answers to your questions about our private notary service",
+  "items": {
+    "q1": {
+      "question": "Is your notarization officially recognized?",
+      "answer": "Yes. Our private notary is licensed and officially approved by the Abu Dhabi Judicial Department. All documents notarized through us carry the same legal validity as those issued by government notary centers."
+    },
+    "q2": {
+      "question": "Can you visit my office or home?",
+      "answer": "Absolutely — this is our key advantage. We can come to you anywhere within Abu Dhabi (office, home, or even hospital) at a time that suits you to complete the process."
+    },
+    "q3": {
+      "question": "How long does the notarization take?",
+      "answer": "Once the appointment is confirmed and the document draft is reviewed, notarization and signing are completed in the same session and you receive your notarized document immediately. The session usually takes no more than 15–30 minutes."
+    },
+    "q4": {
+      "question": "What documents are required for notarization?",
+      "answer": "In general, a valid original Emirates ID is required for all signing parties, or a passport. Some special transactions (such as company contracts) may require additional documents, which will be clarified upon contact."
+    }
+  }
+},
+"Reviews": {
+  "title": "What Our Clients Say",
+  "items": [
+    {
+      "text": "A word of thanks and appreciation to Ali Al Khaja Law Office for their efforts, follow-up, and respectful service — especially Consultant Ibrahim Naji. Based on my experience, I highly recommend dealing with the office due to the lawyers’ expertise, their interaction with you, their professional approach, and the fact that everything is organized, outstanding, and fast.",
+      "name": "Suhail Al Basheer"
+    },
+    {
+      "text": "An office that excels in follow-up, with a large number of consultants. The Notary Public department has extensive experience. Special thanks to Ms. Rose for her follow-up on all my cases.",
+      "name": "Hamad Al Hammadi"
+    },
+    {
+      "text": "An excellent office in all cases, with fast completion of Notary Public services. I thank them for their efforts.",
+      "name": "Nidal Abu Jazar"
+    },
+    {
+      "text": "Mashallah, the best experience. All thanks and appreciation to Ali Al Khaja Law Office and the entire team for their high professionalism and fast handling of all details, whether in the Notary Public department or with the legal consultants. You truly set an example to follow in the legal field.",
+      "name": "Marwa Baker"
+    },
+    {
+      "text": "Ali Al Khaja is a highly professional firm with deep knowledge of laws and regulations. They provide fast notarization services.",
+      "name": "Vipin Das"
+    }
+  ]
+}
+
+}
