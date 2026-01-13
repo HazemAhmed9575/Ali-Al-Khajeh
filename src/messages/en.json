@@ -158,6 +158,14 @@
       "name": "Vipin Das"
     }
   ]
+},
+"stats": {
+  "items": [
+    { "value": 10, "suffix": "+", "label": "Years Experience" },
+    { "value": 500, "suffix": "+", "label": "Cases Won" },
+    { "value": 98, "suffix": "%", "label": "Client Satisfaction" },
+    { "value": 24, "suffix": "/7", "label": "Expert Support" }
+  ]
 }
 
 }

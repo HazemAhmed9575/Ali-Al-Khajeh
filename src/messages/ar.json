@@ -195,5 +195,13 @@
     "title": "تواصل معنا"
   },
   "bottom": "© علي الخاجه - Ali AlKhajeh"
+},
+"stats": {
+  "items": [
+    { "value": 10, "suffix": "+", "label": "سنوات خبرة" },
+    { "value": 500, "suffix": "+", "label": "قضايا ناجحة" },
+    { "value": 98, "suffix": "%", "label": "رضا العملاء" },
+    { "value": 24, "suffix": "/7", "label": "دعم متواصل" }
+  ]
 }
 }

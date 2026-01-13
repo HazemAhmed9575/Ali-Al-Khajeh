@@ -25,11 +25,11 @@ useEffect(() => {
   }, []);
 
   return (
-    <section id="contact" ref={sectionRef} className="relative py-16 md:py-24 bg-white overflow-hidden">
+    <section id="contact" ref={sectionRef} className="relative pb-16 md:pb-24 bg-white overflow-hidden">
          <div className="absolute inset-0 top-48 z-10 opacity-35 pointer-events-none">
   {isVisible && <PinsAnimation isRtl={isRtl} />}
 </div>
-      <div className="container mx-auto px-4 md:px-12 lg:px-32">
+      <div className="container mx-auto px-4 md:px-12 lg:px-32 pt-12">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
           <DoubleFrame isRtl={isRtl}>
             <div>
@@ -91,41 +91,7 @@ useEffect(() => {
               </span>
             </div>
 
-            <div className="relative z-10 pt-10 md:pt-15">
-              <div className="w-[110px] h-[6px] bg-[#85754E] mb-6 mx-auto" />
-
-              <h2
-                className={`relative z-50 font-serif  text-[#0b0e3e]
-                  text-[34px] md:text-[46px] leading-tight
-                  ${
-                    locale === "ar"
-                      ? "text-right lg:translate-x-20 py-3"
-                      : "text-left"
-                  }
-                  lg:-translate-x-20`}>
-                {t(messages, "hero.title")}
-              </h2>
-
-              <p
-                className={`mt-6 text-[#6b7280] leading-8 max-w-[520px] text-xl
-                  ${locale === "ar" ? "text-right " : "text-left"}`}>
-                {t(messages, "hero.desc")}
-              </p>
-
-              <div className="mt-8 flex flex-wrap gap-3 justify-start">
-                <span className="px-5 py-2 rounded-full border border-[#d8a55b] text-[#0b0e3e] text-sm font-semibold">
-                  {t(messages, "hero.badges.licensed")}
-                </span>
-
-                <span className="px-5 py-2 rounded-full border border-[#d8a55b] text-[#0b0e3e] text-sm font-semibold">
-                  {t(messages, "hero.badges.confidential")}
-                </span>
-
-                <span className="px-5 py-2 rounded-full border border-[#d8a55b] text-[#0b0e3e] text-sm font-semibold">
-                  {t(messages, "hero.badges.fast")}
-                </span>
-              </div>
-            </div>
+        
           </div>
         </div>
       </div>

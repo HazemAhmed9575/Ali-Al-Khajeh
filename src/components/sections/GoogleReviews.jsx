@@ -1,0 +1,163 @@
+"use client";
+
+import { t } from "@/i18n/t";
+
+const REVIEW_LINKS = [
+  "https://maps.app.goo.gl/mGPp1bikQQPTMaQE9",
+  "https://maps.app.goo.gl/ugL5493cHhdoQxQF7",
+  "https://maps.app.goo.gl/ddf7T3DD7Q1HUzAS9",
+  "https://maps.app.goo.gl/KtuKHasYQjkuKgYL7",
+  "https://maps.app.goo.gl/MfZZDAFp3H63U7eA7",
+];
+
+// ✅ صورك (اختياري)
+const AVATARS = [
+  "/images/reviews/1.png",
+  "/images/reviews/2.png",
+  "/images/reviews/3.png",
+  "/images/reviews/4.png",
+  "/images/reviews/5.png",
+];
+
+function Stars({ rating = 5 }) {
+  return (
+    <div className="flex items-center gap-0.5">
+      {Array.from({ length: 5 }).map((_, i) => (
+        <svg
+          key={i}
+          viewBox="0 0 24 24"
+          className={`h-4 w-4 ${i < rating ? "text-[#F4B400]" : "text-gray-200"}`}
+          fill="currentColor"
+        >
+          <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+        </svg>
+      ))}
+    </div>
+  );
+}
+
+export default function GoogleReviews({ messages, locale }) {
+  const isRTL = locale === "ar";
+
+  // ✅ items array from json using t()
+  // مهم: لازم t() عندك يرجع array لو value array
+  const items = t(messages, "Reviews.items") || [];
+
+  return (
+    <section className="bg-white py-14" dir={isRTL ? "rtl" : "ltr"}>
+      <div className="max-w-[1280px] mx-auto px-6 lg:px-10">
+
+        {/* Header */}
+        <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-4 mb-8">
+          <div>
+            <p className="text-sm font-semibold text-gray-500">
+              {isRTL ? "التقييمات" : "Testimonials"}
+            </p>
+
+            <h2 className="text-3xl lg:text-4xl font-extrabold text-gray-900 mt-1">
+              {t(messages, "Reviews.title")}
+            </h2>
+          </div>
+
+          <a
+            href={REVIEW_LINKS[0]}
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center gap-2"
+          >
+          <span className="inline-flex items-center gap-2">
+  {/* ✅ Google "G" svg (مش هيتكسر) */}
+  <svg viewBox="0 0 48 48" className="h-4 w-4">
+    <path fill="#EA4335" d="M24 9.5c3.1 0 5.9 1.1 8.1 3.2l5.9-5.9C34.4 3.3 29.6 1 24 1 14.9 1 7.1 6.2 3.3 13.7l6.9 5.4C12 13.3 17.6 9.5 24 9.5z" />
+    <path fill="#34A853" d="M46.5 24.5c0-1.6-.1-2.8-.4-4H24v7.8h12.7c-.5 3-2.2 5.6-4.8 7.3l7.3 5.7c4.2-3.9 6.3-9.7 6.3-14.8z" />
+    <path fill="#4A90E2" d="M10.2 28.9c-.5-1.4-.8-2.9-.8-4.4s.3-3 .8-4.4l-6.9-5.4C1.8 17.8 1 20.8 1 24s.8 6.2 2.3 9.3l6.9-5.4z" />
+    <path fill="#FBBC05" d="M24 47c5.6 0 10.4-1.8 13.9-5l-7.3-5.7c-2 1.4-4.7 2.2-6.6 2.2-6.4 0-12-3.8-13.8-9.6l-6.9 5.4C7.1 41.8 14.9 47 24 47z" />
+  </svg>
+
+  <span className="text-xs font-semibold text-gray-600">
+    {isRTL ? "عرض على Google" : "View on Google"}
+  </span>
+</span>
+          </a>
+        </div>
+
+        {/* Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {items.map((r, idx) => (
+            <div
+              key={idx}
+              className="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm hover:shadow-md transition"
+            >
+              {/* top */}
+              <div className="flex items-start justify-between gap-3">
+                <div className="flex items-center gap-3">
+                  {/* avatar */}
+                  <img
+                    src={AVATARS[idx] || "/images/reviews/default.jpg"}
+                    alt={r?.name}
+                    className="h-11 w-11 rounded-full object-cover border border-gray-200"
+                    onError={(e) => {
+                      e.currentTarget.src =
+                        "https://i.pravatar.cc/80?img=" + (idx + 10);
+                    }}
+                  />
+
+                  <div>
+                    <p className="font-extrabold text-gray-900 leading-tight">
+                      {r?.name}
+                    </p>
+
+                    <p className="text-xs text-gray-500 mt-0.5">
+                      {isRTL ? "عميل موثوق" : "Verified Client"}
+                    </p>
+                  </div>
+                </div>
+
+                {/* Google icon */}
+                <svg viewBox="0 0 48 48" className="h-5 w-5 shrink-0">
+                  <path
+                    fill="#EA4335"
+                    d="M24 9.5c3.1 0 5.9 1.1 8.1 3.2l5.9-5.9C34.4 3.3 29.6 1 24 1 14.9 1 7.1 6.2 3.3 13.7l6.9 5.4C12 13.3 17.6 9.5 24 9.5z"
+                  />
+                  <path
+                    fill="#34A853"
+                    d="M46.5 24.5c0-1.6-.1-2.8-.4-4H24v7.8h12.7c-.5 3-2.2 5.6-4.8 7.3l7.3 5.7c4.2-3.9 6.3-9.7 6.3-14.8z"
+                  />
+                  <path
+                    fill="#4A90E2"
+                    d="M10.2 28.9c-.5-1.4-.8-2.9-.8-4.4s.3-3 .8-4.4l-6.9-5.4C1.8 17.8 1 20.8 1 24s.8 6.2 2.3 9.3l6.9-5.4z"
+                  />
+                  <path
+                    fill="#FBBC05"
+                    d="M24 47c5.6 0 10.4-1.8 13.9-5l-7.3-5.7c-2 1.4-4.7 2.2-6.6 2.2-6.4 0-12-3.8-13.8-9.6l-6.9 5.4C7.1 41.8 14.9 47 24 47z"
+                  />
+                </svg>
+              </div>
+
+              {/* stars */}
+              <div className="mt-4 flex items-center gap-2">
+                <Stars rating={5} />
+                <span className="text-xs font-bold text-gray-600">5.0</span>
+              </div>
+
+              {/* text */}
+              <p className="mt-4 text-sm text-gray-700 leading-relaxed line-clamp-5">
+                {r?.text}
+              </p>
+
+              {/* link */}
+              <a
+                href={REVIEW_LINKS[idx] || REVIEW_LINKS[0]}
+                target="_blank"
+                rel="noreferrer"
+                className="mt-5 inline-flex text-sm font-bold text-blue-600 hover:text-blue-700"
+              >
+                {isRTL ? "قراءة على Google" : "Read on Google"}
+              </a>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
