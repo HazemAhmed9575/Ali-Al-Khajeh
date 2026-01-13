@@ -53,7 +53,7 @@ const awards = [
                 transition-all duration-300 ease-out hover:scale-110 hover:shadow-[0_12px_35px_rgba(216,165,91,0.35)]">
   <Image
     src={award.img}
-    alt={award.title}
+  
     fill
     className="object-contain p-4"
   />
