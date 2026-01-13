@@ -87,10 +87,7 @@ export default function Reviews({ messages, locale }) {
           {/* Left Arrow */}
           <button
             onClick={onLeftArrow}
-            className="absolute left-2 md:-left-16 top-1/2 -translate-y-1/2 z-20
-                       w-11 h-11 rounded-full bg-[#c9a45a]
-                       flex items-center justify-center shadow-lg
-                       hover:scale-105 transition active:scale-95"
+            className="absolute left-2 md:-left-16 top-1/2 -translate-y-1/2 z-20 w-11 h-11 rounded-full bg-[#c9a45a] flex items-center justify-center shadow-lg hover:scale-105 transition active:scale-95"
             aria-label="Prev"
           >
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" className="text-white">
@@ -106,11 +103,7 @@ export default function Reviews({ messages, locale }) {
 
           {/* ✅ Card (FIXED HEIGHT + ANIMATION) */}
           <div
-            className="w-full max-w-2xl rounded-xl border border-white/10
-                       bg-white/5 backdrop-blur-md
-                       px-6 md:px-10 py-8 md:py-9 text-center
-                       shadow-[0_0_0_1px_rgba(255,255,255,0.03)]
-                       h-[240px] md:h-[260px] flex flex-col"
+            className="w-full max-w-2xl rounded-xl border border-white/10 bg-white/5 backdrop-blur-md    px-6 md:px-10 py-8 md:py-9 text-center  shadow-[0_0_0_1px_rgba(255,255,255,0.03)] h-[240px] md:h-[260px] flex flex-col"
           >
             {/* Stars */}
             <div className="flex justify-center gap-1 mb-5 shrink-0">
@@ -149,10 +142,7 @@ export default function Reviews({ messages, locale }) {
           {/* Right Arrow */}
           <button
             onClick={onRightArrow}
-            className="absolute right-2 md:-right-16 top-1/2 -translate-y-1/2 z-20
-                       w-11 h-11 rounded-full bg-[#c9a45a]
-                       flex items-center justify-center shadow-lg
-                       hover:scale-105 transition active:scale-95"
+            className="absolute right-2 md:-right-16 top-1/2 -translate-y-1/2 z-20  w-11 h-11 rounded-full bg-[#c9a45a] flex items-center justify-center shadow-lg hover:scale-105 transition active:scale-95"
             aria-label="Next"
           >
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" className="text-white">

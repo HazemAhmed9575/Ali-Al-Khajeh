@@ -17,32 +17,26 @@ export default function Services({ messages, locale }) {
     {
       icon: FaScaleBalanced,
       titleKey: "services.items.business.title",
-   
     },
     {
       icon: FaPeopleRoof,
       titleKey: "services.items.family.title",
-  
     },
     {
       icon: FaShieldHalved,
       titleKey: "services.items.insurance.title",
-  
     },
     {
       icon: FaIndustry,
       titleKey: "services.items.industrial.title",
-
     },
     {
       icon: FaGavel,
       titleKey: "services.items.auction.title",
-     
     },
     {
       icon: FaBriefcase,
       titleKey: "services.items.employment.title",
-     
     },
   ];
 
@@ -63,7 +57,6 @@ export default function Services({ messages, locale }) {
           <h2 className="text-[#d8a55b] font-serif text-[28px] md:text-[34px] font-semibold">
             {t(messages, "services.title")}
           </h2>
-       
         </div>
 
         {/* Grid */}
@@ -99,7 +92,6 @@ export default function Services({ messages, locale }) {
                   <h3 className="text-white font-serif text-[18px] md:text-[19px] font-semibold">
                     {t(messages, item.titleKey)}
                   </h3>
-                  
                 </div>
               </article>
             );

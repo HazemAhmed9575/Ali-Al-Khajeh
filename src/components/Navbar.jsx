@@ -19,7 +19,7 @@ export default function Navbar({ messages, locale }) {
   const isRTL = locale === "ar";
 
   const sections = [
-    { id: "Contact", label: t(messages, "nav.Contact") },
+    { id: "contact", label: t(messages, "nav.Contact") },
     { id: "why-us", label: t(messages, "nav.why") },
     { id: "services", label: t(messages, "nav.services") },
     { id: "steps", label: t(messages, "nav.steps") },
@@ -28,7 +28,7 @@ export default function Navbar({ messages, locale }) {
   ];
 
 
-const [activeSection, setActiveSection] = useState("Contact");
+const [activeSection, setActiveSection] = useState("contact");
 
 useEffect(() => {
   const ids = sections.map((s) => s.id);
@@ -45,7 +45,6 @@ useEffect(() => {
     },
     {
       root: null,
-      // ✅ دي أهم حاجة: بنقول للـ observer اعتبر ان في Navbar فوق واخده مساحة
       rootMargin: "-120px 0px -60% 0px",
       threshold: [0.15, 0.25, 0.35, 0.5],
     }
@@ -57,7 +56,8 @@ useEffect(() => {
   });
 
   return () => observer.disconnect();
-}, []);
+}, [locale]); // ✅ كده
+
 
 
 

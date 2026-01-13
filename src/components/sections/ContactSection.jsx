@@ -25,7 +25,7 @@ useEffect(() => {
   }, []);
 
   return (
-    <section ref={sectionRef} className="relative py-16 md:py-24 bg-white overflow-hidden">
+    <section id="contact" ref={sectionRef} className="relative py-16 md:py-24 bg-white overflow-hidden">
          <div className="absolute inset-0 top-48 z-10 opacity-35 pointer-events-none">
   {isVisible && <PinsAnimation isRtl={isRtl} />}
 </div>
