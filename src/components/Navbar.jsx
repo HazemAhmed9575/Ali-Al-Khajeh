@@ -21,10 +21,10 @@ export default function Navbar({ messages, locale }) {
   const sections = [
     { id: "contact", label: t(messages, "nav.Contact") },
     { id: "why-us", label: t(messages, "nav.why") },
-    { id: "services", label: t(messages, "nav.services") },
     { id: "steps", label: t(messages, "nav.steps") },
+    { id: "services", label: t(messages, "nav.services") },
     { id: "faq", label: t(messages, "nav.faq") },
-    { id: "reviews", label: t(messages, "nav.reviews") },
+
   ];
 
 

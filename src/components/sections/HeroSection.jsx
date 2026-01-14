@@ -17,19 +17,10 @@ export default function HeroSection({ messages, locale }) {
     <section
       id="home"
       dir={isRTL ? "rtl" : "ltr"}
-      className="relative overflow-hidden bg-white text-gray-900 h-screen"
-    >
+      className="relative overflow-hidden bg-white text-gray-900 h-screen">
       <div className="max-w-[1280px] h-full mx-auto flex flex-col lg:flex-row items-stretch">
         {/* Left */}
         <div className="flex-1 px-6 lg:px-10 py-16 lg:py-28 z-10 flex flex-col justify-center">
-          {/* Kicker Badge */}
-          <div className="inline-flex w-fit items-center gap-2 px-3 py-1 rounded-full mb-7 bg-amber-50 border border-[#85754E]">
-            <span className="size-2 rounded-full bg-[#85754E]" />
-            <span className="text-[11px] font-extrabold uppercase tracking-[0.25em] text-[#85754E]">
-              {t(messages, "hero.kicker") || "Premier Legal Defense"}
-            </span>
-          </div>
-
           {/* Title */}
           <h1 className="text-4xl lg:text-6xl font-extrabold leading-[1.1] mb-6 tracking-tight text-gray-900">
             {titleLines.map((line, idx) => (
@@ -73,18 +64,18 @@ export default function HeroSection({ messages, locale }) {
         </div>
 
         {/* Right Image */}
-      <div className="flex-1 relative w-full">
-  <Image
-    src="/images/hero-bg-mobile.03cc67d3.webp"
-    alt="Hero Background"
-    fill
-    priority
-    className="object-cover object-center"
-  />
+        <div className="flex-1 relative w-full">
+          <Image
+            src="/images/hero-bg-mobile.03cc67d3.webp"
+            alt="Hero Background"
+            fill
+            priority
+            className="object-cover object-center"
+          />
 
-  {/* overlay */}
-  <div className="absolute inset-0 bg-gradient-to-r from-white/95 via-white/30 to-transparent hidden lg:block" />
-</div>
+          {/* overlay */}
+          <div className="absolute inset-0 bg-gradient-to-r from-white/95 via-white/30 to-transparent hidden lg:block" />
+        </div>
       </div>
     </section>
   );
