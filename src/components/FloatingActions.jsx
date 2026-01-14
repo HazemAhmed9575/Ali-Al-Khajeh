@@ -17,15 +17,9 @@ export default function FloatingActions({
     window.dataLayer.push({
       event: "link_click",
       variant: "click_url",
-
-      // ✅ ده اللي انت محتاجه (Click URL العادي)
-      "Click URL": url,
-
-      // ✅ سيبه كمان احتياطًا (لو فيه Variables تانية بتستخدمه)
       click_url: url,
-
-      click_type: type,
-      position,
+      click_type: type,       // whatsapp | call
+      position: position,     // contact_logo_section
     });
   };
 

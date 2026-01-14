@@ -92,12 +92,12 @@ const scrollToSection = (id) => {
     if (typeof window === "undefined") return;
 
     window.dataLayer = window.dataLayer || [];
-    window.dataLayer.push({
+   window.dataLayer.push({
       event: "link_click",
       variant: "click_url",
       click_url: url,
-      click_type: type,     // whatsapp | call
-      position,             // header_icons
+      click_type: type,       // whatsapp | call
+      position: position,     // contact_logo_section
     });
   };
 
