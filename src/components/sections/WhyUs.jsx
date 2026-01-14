@@ -100,7 +100,7 @@ export default function WhyUs({ messages, locale }) {
             <div className="absolute inset-0 bg-black/20" />
 
             {/* quote */}
-            <div
+            {/* <div
               className={`absolute bottom-6 left-6 right-6 p-6 bg-white/10 backdrop-blur-md rounded-xl border border-white/20 ${
                 isRtl ? "text-right" : "text-left"
               }`}>
@@ -111,7 +111,7 @@ export default function WhyUs({ messages, locale }) {
               <p className="text-[#d8a55b] font-bold mt-4">
                 {t(messages, "whyChoose.quote.author")}
               </p>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

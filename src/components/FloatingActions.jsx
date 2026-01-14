@@ -1,6 +1,7 @@
 "use client";
 
 import { FaWhatsapp, FaPhoneAlt } from "react-icons/fa";
+import { pushDataLayer } from "@/lib/datalayer";
 
 export default function FloatingActions({
   phone = "+971503090203",
@@ -9,33 +10,24 @@ export default function FloatingActions({
   const waLink = `https://wa.me/${whatsapp}`;
   const telLink = `tel:${phone}`;
 
-  // ✅ Push event to GTM
-  const pushEvent = (eventName, extra = {}) => {
-    if (typeof window === "undefined") return;
+  const trackAndOpen = (e, url, type) => {
+    e.preventDefault();
 
-    window.dataLayer = window.dataLayer || [];
-    window.dataLayer.push({
-      event: eventName,
-      ...extra,
+    // ✅ DataLayer push (exactly what you asked)
+    pushDataLayer({
+      event: "link_click",
+      variant: "click_url",
+      click_type: type,        // whatsapp | call  (optional but useful)
+      click_url: url,
     });
-  };
 
-  const handleWhatsAppClick = () => {
-    pushEvent("whatsapp_click", {
-      action: "whatsapp",
-      phone: whatsapp,
-      url: waLink,
-      position: "floating",
-    });
-  };
-
-  const handleCallClick = () => {
-    pushEvent("call_click", {
-      action: "call",
-      phone: phone,
-      url: telLink,
-      position: "floating",
-    });
+    setTimeout(() => {
+      if (url.startsWith("tel:")) {
+        window.location.href = url;
+      } else {
+        window.open(url, "_blank", "noopener,noreferrer");
+      }
+    }, 150);
   };
 
   return (
@@ -43,49 +35,23 @@ export default function FloatingActions({
       {/* WhatsApp */}
       <a
         href={waLink}
+        onClick={(e) => trackAndOpen(e, waLink, "whatsapp")}
         target="_blank"
         rel="noreferrer"
-        onClick={handleWhatsAppClick}
         className="group relative flex items-center justify-center w-14 h-14 rounded-2xl bg-[#25D366] text-white shadow-[0_10px_30px_rgba(0,0,0,0.25)] border border-white/15 hover:scale-[1.06] active:scale-[0.98] transition-all duration-300"
         aria-label="WhatsApp"
       >
         <FaWhatsapp className="text-[26px]" />
-
-        {/* ✅ Tooltip (Desktop only) */}
-        <span
-          className="
-            pointer-events-none absolute hidden lg:block
-            right-[70px] top-1/2 -translate-y-1/2 whitespace-nowrap
-            rounded-xl bg-[#0b1220] text-white/90 px-3 py-1.5 text-xs
-            border border-white/10 opacity-0 translate-x-2
-            group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300
-          "
-        >
-          WhatsApp
-        </span>
       </a>
 
       {/* Call */}
       <a
         href={telLink}
-        onClick={handleCallClick}
+        onClick={(e) => trackAndOpen(e, telLink, "call")}
         className="group relative flex items-center justify-center w-14 h-14 rounded-2xl bg-[#85754E] text-[#0b1220] shadow-[0_10px_30px_rgba(0,0,0,0.25)] border border-white/15 hover:scale-[1.06] active:scale-[0.98] transition-all duration-300"
         aria-label="Call"
       >
         <FaPhoneAlt className="text-[22px]" />
-
-        {/* ✅ Tooltip (Desktop only) */}
-        <span
-          className="
-            pointer-events-none absolute hidden lg:block
-            right-[70px] top-1/2 -translate-y-1/2 whitespace-nowrap
-            rounded-xl bg-[#0b1220] text-white/90 px-3 py-1.5 text-xs
-            border border-white/10 opacity-0 translate-x-2
-            group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300
-          "
-        >
-          Call now
-        </span>
       </a>
     </div>
   );

@@ -64,7 +64,7 @@ export default function GoogleReviews({ messages, locale }) {
   };
 
   return (
-    <section className="bg-white py-12 relative" dir={isRTL ? "rtl" : "ltr"}>
+    <section id="reviews" className="bg-white py-12 relative" dir={isRTL ? "rtl" : "ltr"}>
       <div className="max-w-[1280px] mx-auto px-6 lg:px-10">
         {/* Header */}
         <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-4 mb-8">

@@ -19,7 +19,8 @@ export default function Navbar({ messages, locale }) {
   const isRTL = locale === "ar";
 
   const sections = [
-    { id: "contact", label: t(messages, "nav.Contact") },
+    { id: "home", label: t(messages, "nav.home") },
+    { id: "reviews", label: t(messages, "nav.reviews") },
     { id: "why-us", label: t(messages, "nav.why") },
     { id: "steps", label: t(messages, "nav.steps") },
     { id: "services", label: t(messages, "nav.services") },
@@ -151,46 +152,62 @@ const scrollToSection = (id) => {
             </div>
 
             {/* Whats + Call + Language */}
-        <div className="flex items-center gap-2">
+<div className="flex items-center gap-2">
+  {/* WhatsApp */}
   <a
     href="https://wa.me/971503090203"
     target="_blank"
     rel="noreferrer"
-    onClick={() => {
+    onClick={(e) => {
+      e.preventDefault();
+
+      const url = "https://wa.me/971503090203";
+
       if (typeof window !== "undefined") {
         window.dataLayer = window.dataLayer || [];
         window.dataLayer.push({
-          event: "whatsapp_click",
-          action: "whatsapp",
-          phone: "971503090203",
-          url: "https://wa.me/971503090203",
-          position: "header_icons", // ✅ هنا مكان الزر
+          event: "link_click",
+          variant: "click_url",
+          click_url: url,
+          click_type: "whatsapp",
+          position: "header_icons",
         });
       }
+
+      setTimeout(() => {
+        window.open(url, "_blank", "noopener,noreferrer");
+      }, 150);
     }}
-    className="size-9 rounded-full bg-white/20 flex items-center justify-center
-               text-white hover:bg-white/30 transition-all duration-300"
+    className="size-9 rounded-full bg-white/20 flex items-center justify-center text-white hover:bg-white/30 transition-all duration-300"
     aria-label="WhatsApp"
   >
     <FaWhatsapp className="text-[16px]" />
   </a>
 
+  {/* Call */}
   <a
     href="tel:+971503090203"
-    onClick={() => {
+    onClick={(e) => {
+      e.preventDefault();
+
+      const url = "tel:+971503090203";
+
       if (typeof window !== "undefined") {
         window.dataLayer = window.dataLayer || [];
         window.dataLayer.push({
-          event: "call_click",
-          action: "call",
-          phone: "+971503090203",
-          url: "tel:+971503090203",
-          position: "header_icons", // ✅ هنا مكان الزر
+          event: "link_click",
+          variant: "click_url",
+          click_url: url,
+          click_type: "call",
+          position: "header_icons",
         });
       }
+
+      setTimeout(() => {
+        window.location.href = url;
+      }, 150);
     }}
-    className="size-9 rounded-full bg-white/20 flex items-center justify-center
-               text-white hover:bg-white/30 transition-all duration-300"
+    className="size-9 rounded-full bg-white/20 flex items-center justify-center text-white hover:bg-white/30 transition-all duration-300"
     aria-label="Call"
   >
     <FaPhoneAlt className="text-[15px]" />

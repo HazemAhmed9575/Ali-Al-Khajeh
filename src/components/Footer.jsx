@@ -12,10 +12,12 @@ import Image from "next/image";
 export default function Footer({ messages, locale }) {
   const isRTL = locale === "ar";
   const sections = [
-    { id: "Contact", label: t(messages, "nav.Contact") },
+   { id: "home", label: t(messages, "nav.home") },
+    { id: "reviews", label: t(messages, "nav.reviews") },
     { id: "why-us", label: t(messages, "nav.why") },
-    { id: "services", label: t(messages, "nav.services") },
     { id: "steps", label: t(messages, "nav.steps") },
+    { id: "services", label: t(messages, "nav.services") },
+    { id: "faq", label: t(messages, "nav.faq") },
   ];
 
   const scrollToSection = (id) => {
@@ -74,7 +76,7 @@ export default function Footer({ messages, locale }) {
           </div>
 
           {/* Column 3: Hours */}
-          <div>
+          {/* <div>
             <h4 className="font-bold mb-6 uppercase text-xs tracking-[0.2em] text-[#c9a45a]">
               {t(messages, "Footer.officeHours.title")}
             </h4>
@@ -95,7 +97,7 @@ export default function Footer({ messages, locale }) {
                 </span>
               </li>
             </ul>
-          </div>
+          </div> */}
 
           {/* Column 4: Connect */}
           <div className="flex gap-3 mb-6">

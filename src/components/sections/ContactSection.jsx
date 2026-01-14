@@ -12,36 +12,40 @@ export default function LogoContact({
 }) {
   const isRtl = locale === "ar";
 
-  // ✅ push to GTM
-  const pushEvent = (eventName, extra = {}) => {
+  const waLink = `https://wa.me/${whatsappNumber}`;
+  const telLink = `tel:${callNumber}`;
+
+  // ✅ unified push
+  const pushLinkClick = ({ url, type, position }) => {
     if (typeof window === "undefined") return;
 
     window.dataLayer = window.dataLayer || [];
     window.dataLayer.push({
-      event: eventName,
-      ...extra,
+      event: "link_click",
+      variant: "click_url",
+      click_url: url,
+      click_type: type,       // whatsapp | call
+      position: position,     // contact_logo_section
     });
   };
 
-  const waLink = `https://wa.me/${whatsappNumber}`;
-  const telLink = `tel:${callNumber}`;
+  // ✅ track + open
+  const trackAndOpen = (e, url, type) => {
+    e.preventDefault();
 
-  const handleWhatsAppClick = () => {
-    pushEvent("whatsapp_click", {
-      action: "whatsapp",
-      phone: whatsappNumber,
-      url: waLink,
+    pushLinkClick({
+      url,
+      type,
       position: "contact_logo_section",
     });
-  };
 
-  const handleCallClick = () => {
-    pushEvent("call_click", {
-      action: "call",
-      phone: callNumber,
-      url: telLink,
-      position: "contact_logo_section",
-    });
+    setTimeout(() => {
+      if (url.startsWith("tel:")) {
+        window.location.href = url; // ✅ call
+      } else {
+        window.open(url, "_blank", "noopener,noreferrer"); // ✅ whatsapp
+      }
+    }, 150);
   };
 
   return (
@@ -65,8 +69,8 @@ export default function LogoContact({
           href={waLink}
           target="_blank"
           rel="noreferrer"
-          onClick={handleWhatsAppClick}
-          className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 h-12 rounded-full bg-[#85754E] text-white text-sm font-bold shadow-sm hover:bg-[#85754E]/85 transition"
+          onClick={(e) => trackAndOpen(e, waLink, "whatsapp")}
+          className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 h-12 rounded-full bg-[#25D366] text-white text-sm font-bold shadow-sm hover:bg-[#25D366]/85 transition"
           aria-label="WhatsApp"
         >
           <FaWhatsapp className="text-[18px]" />
@@ -76,8 +80,8 @@ export default function LogoContact({
         {/* Call */}
         <a
           href={telLink}
-          onClick={handleCallClick}
-          className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 h-12 rounded-full bg-white text-gray-900 text-sm font-bold border border-gray-200 hover:bg-gray-50 transition"
+          onClick={(e) => trackAndOpen(e, telLink, "call")}
+          className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 h-12 rounded-full bg-[#85754E] text-white text-sm font-bold shadow-sm hover:bg-[#85754E]/85 transition"
           aria-label="Call"
         >
           <FiPhoneCall className="text-[18px]" />

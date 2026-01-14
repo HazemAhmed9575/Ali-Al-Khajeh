@@ -10,7 +10,7 @@
     "enter": "Entering..."
   },
     "nav": {
-        "Contact":"Contact",
+        "home":"Home",
     "why": "Why Us",
     "services": "Services",
     "steps": "Steps",
@@ -18,7 +18,7 @@
     "reviews": "Testimonials"
   },
     "hero": {
-    "title": "Authenticate your contracts and official transactions\nfrom wherever you are",
+    "title": "Officialize your contracts and transactions from the comfort of your home with Ali Al Khaja Law Firm.",
     "desc": "A licensed private notary. We save you the hassle of waiting and crowded offices — we come to you wherever you are to complete your transaction immediately.",
     "badges": {
       "licensed": "Officially Licensed",
@@ -161,9 +161,9 @@
 },
 "stats": {
   "items": [
-    { "value": 10, "suffix": "+", "label": "Years Experience" },
+    { "value": 20, "suffix": "+", "label": "Years Experience" },
     { "value": 500, "suffix": "+", "label": "Cases Won" },
-    { "value": 98, "suffix": "%", "label": "Client Satisfaction" },
+    { "value": 26, "suffix": "%", "label": "Client Satisfaction" },
     { "value": 24, "suffix": "/7", "label": "Expert Support" }
   ]
 }
