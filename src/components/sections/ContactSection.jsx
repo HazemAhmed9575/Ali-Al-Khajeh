@@ -1,37 +1,68 @@
 "use client";
-import { useEffect, useRef, useState } from "react";
-import DoubleFrame from "../ui/DoubleFrame";
-import PinsAnimation from "../ui/PinsAnimation";
-import { t } from "@/i18n/t";
-export default function ContactSection({ messages, locale }) {
+
+import Image from "next/image";
+import { FaWhatsapp } from "react-icons/fa";
+import { FiPhoneCall } from "react-icons/fi";
+
+
+export default function LogoContact({
+  locale = "en",
+  logoSrc = "/images/LOGO-PNG.png", 
+  whatsappNumber = "971503090203",
+  callNumber = "+971503090203",
+}) {
   const isRtl = locale === "ar";
 
-  const sectionRef = useRef(null);
-  const [isVisible, setIsVisible] = useState(false);
-
-
-useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-          observer.disconnect();
-        }
-      },
-      { threshold: 0.3 }
-    );
-    if (sectionRef.current) observer.observe(sectionRef.current);
-    return () => observer.disconnect();
-  }, []);
-
   return (
-    <section id="contact" ref={sectionRef} className="relative pb-16 md:pb-24 bg-white overflow-hidden">
-         <div className="absolute inset-0 top-48 z-10 opacity-35 pointer-events-none">
-  {isVisible && <PinsAnimation isRtl={isRtl} />}
-</div>
-      <div className="container mx-auto px-4 md:px-12 lg:px-32 pt-12">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
-          <DoubleFrame isRtl={isRtl}>
+    <div  className="flex flex-col items-center text-center">
+
+      {/* ✅ LOGO IMAGE */}
+      <div className="relative w-[500px] md:w-[600px] lg:w-[700px] aspect-[3/1]">
+        <Image
+          src={logoSrc}
+          alt="Logo"
+          fill
+          priority
+          sizes="(max-width: 768px) 220px, (max-width: 1024px) 280px, 320px"
+          className="object-contain"
+        />
+      </div>
+
+      {/* ✅ Buttons under logo */}
+      <div className="mt-6 flex flex-row items-center gap-3">
+        {/* WhatsApp */}
+        <a
+          href={`https://wa.me/${whatsappNumber}`}
+          target="_blank"
+          rel="noreferrer"
+          className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 h-12 rounded-full bg-[#85754E] text-white text-sm font-bold shadow-sm hover:bg-[#85754E]/85 transition"
+        >
+          <FaWhatsapp className="text-[18px]" />
+          {isRtl ? "واتساب" : "WhatsApp"}
+        </a>
+
+        {/* Call */}
+        <a
+          href={`tel:${callNumber}`}
+          className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 h-12 rounded-full bg-white text-gray-900 text-sm font-bold border border-gray-200 hover:bg-gray-50 transition"
+        >
+          <FiPhoneCall className="text-[18px]" />
+          {isRtl ? "اتصال" : "Call"}
+        </a>
+      </div>
+
+      {/* Optional note */}
+      <p className="mt-4 text-sm text-gray-500 max-w-md">
+        {isRtl
+          ? "اختر طريقة التواصل المناسبة لك وسنقوم بالرد فورًا."
+          : "Choose your preferred contact method and we’ll respond quickly."}
+      </p>
+    </div>
+  );
+}
+
+
+  {/* <DoubleFrame isRtl={isRtl}>
             <div>
               <h2 className="text-[32px] md:text-[38px] font-semibold text-[#0b0e3e]">
                 {t(messages, "contact.title")}
@@ -78,23 +109,4 @@ useEffect(() => {
                 </button>
               </form>
             </div>
-          </DoubleFrame>
-
-          <div className="relative">
-            <div
-              className={`pointer-events-none absolute z-0 select-none hidden md:block
-    -top-32 md:-top-40
-    ${isRtl ? "-right-10 md:-right-20" : "-left-10 md:-left-20"}
-  `}>
-              <span className="text-[520px] md:text-[700px] leading-none font-extrabold text-slate-100/70">
-                A
-              </span>
-            </div>
-
-        
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
+          </DoubleFrame> */}

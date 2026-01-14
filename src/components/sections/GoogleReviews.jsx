@@ -1,6 +1,6 @@
 "use client";
 import { t } from "@/i18n/t";
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const REVIEW_LINKS = [
   "https://maps.app.goo.gl/mGPp1bikQQPTMaQE9",
@@ -26,9 +26,10 @@ function Stars({ rating = 5 }) {
         <svg
           key={i}
           viewBox="0 0 24 24"
-          className={`h-4 w-4 ${i < rating ? "text-[#F4B400]" : "text-gray-200"}`}
-          fill="currentColor"
-        >
+          className={`h-4 w-4 ${
+            i < rating ? "text-[#F4B400]" : "text-gray-200"
+          }`}
+          fill="currentColor">
           <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
         </svg>
       ))}
@@ -42,8 +43,6 @@ export default function GoogleReviews({ messages, locale }) {
   // ✅ items array from json using t()
   // مهم: لازم t() عندك يرجع array لو value array
   const items = t(messages, "Reviews.items") || [];
-
-
 
   const sliderRef = useRef(null);
 
@@ -65,9 +64,8 @@ export default function GoogleReviews({ messages, locale }) {
   };
 
   return (
-   <section className="bg-white py-14" dir={isRTL ? "rtl" : "ltr"}>
+    <section className="bg-white py-12 relative" dir={isRTL ? "rtl" : "ltr"}>
       <div className="max-w-[1280px] mx-auto px-6 lg:px-10">
-
         {/* Header */}
         <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-4 mb-8">
           <div>
@@ -85,35 +83,41 @@ export default function GoogleReviews({ messages, locale }) {
             {/* ✅ arrows */}
             <button
               type="button"
-              onClick={() => scrollByCards("prev")}
+              onClick={() => scrollByCards(isRTL ? "next" : "prev")}
               className="h-11 w-11 rounded-full border border-gray-200 bg-white shadow-sm hover:bg-gray-50 transition grid place-items-center"
-              aria-label="Previous"
-            >
+              aria-label={isRTL ? "Next" : "Previous"}>
               <svg
                 viewBox="0 0 24 24"
                 className="h-5 w-5 text-gray-700"
                 fill="none"
                 stroke="currentColor"
-                strokeWidth="2"
-              >
-                <path d="M15 18l-6-6 6-6" />
+                strokeWidth="2">
+                {/* في العربي نخلي السهم يشاور يمين */}
+                {isRTL ? (
+                  <path d="M9 6l6 6-6 6" />
+                ) : (
+                  <path d="M15 18l-6-6 6-6" />
+                )}
               </svg>
             </button>
 
             <button
               type="button"
-              onClick={() => scrollByCards("next")}
+              onClick={() => scrollByCards(isRTL ? "prev" : "next")}
               className="h-11 w-11 rounded-full border border-gray-200 bg-white shadow-sm hover:bg-gray-50 transition grid place-items-center"
-              aria-label="Next"
-            >
+              aria-label={isRTL ? "Previous" : "Next"}>
               <svg
                 viewBox="0 0 24 24"
                 className="h-5 w-5 text-gray-700"
                 fill="none"
                 stroke="currentColor"
-                strokeWidth="2"
-              >
-                <path d="M9 6l6 6-6 6" />
+                strokeWidth="2">
+                {/* في العربي نخلي السهم يشاور شمال */}
+                {isRTL ? (
+                  <path d="M15 18l-6-6 6-6" />
+                ) : (
+                  <path d="M9 6l6 6-6 6" />
+                )}
               </svg>
             </button>
 
@@ -122,13 +126,24 @@ export default function GoogleReviews({ messages, locale }) {
               href={REVIEW_LINKS[0]}
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-gray-200 bg-white shadow-sm hover:bg-gray-50 transition"
-            >
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-gray-200 bg-white shadow-sm hover:bg-gray-50 transition">
               <svg viewBox="0 0 48 48" className="h-4 w-4">
-                <path fill="#EA4335" d="M24 9.5c3.1 0 5.9 1.1 8.1 3.2l5.9-5.9C34.4 3.3 29.6 1 24 1 14.9 1 7.1 6.2 3.3 13.7l6.9 5.4C12 13.3 17.6 9.5 24 9.5z" />
-                <path fill="#34A853" d="M46.5 24.5c0-1.6-.1-2.8-.4-4H24v7.8h12.7c-.5 3-2.2 5.6-4.8 7.3l7.3 5.7c4.2-3.9 6.3-9.7 6.3-14.8z" />
-                <path fill="#4A90E2" d="M10.2 28.9c-.5-1.4-.8-2.9-.8-4.4s.3-3 .8-4.4l-6.9-5.4C1.8 17.8 1 20.8 1 24s.8 6.2 2.3 9.3l6.9-5.4z" />
-                <path fill="#FBBC05" d="M24 47c5.6 0 10.4-1.8 13.9-5l-7.3-5.7c-2 1.4-4.7 2.2-6.6 2.2-6.4 0-12-3.8-13.8-9.6l-6.9 5.4C7.1 41.8 14.9 47 24 47z" />
+                <path
+                  fill="#EA4335"
+                  d="M24 9.5c3.1 0 5.9 1.1 8.1 3.2l5.9-5.9C34.4 3.3 29.6 1 24 1 14.9 1 7.1 6.2 3.3 13.7l6.9 5.4C12 13.3 17.6 9.5 24 9.5z"
+                />
+                <path
+                  fill="#34A853"
+                  d="M46.5 24.5c0-1.6-.1-2.8-.4-4H24v7.8h12.7c-.5 3-2.2 5.6-4.8 7.3l7.3 5.7c4.2-3.9 6.3-9.7 6.3-14.8z"
+                />
+                <path
+                  fill="#4A90E2"
+                  d="M10.2 28.9c-.5-1.4-.8-2.9-.8-4.4s.3-3 .8-4.4l-6.9-5.4C1.8 17.8 1 20.8 1 24s.8 6.2 2.3 9.3l6.9-5.4z"
+                />
+                <path
+                  fill="#FBBC05"
+                  d="M24 47c5.6 0 10.4-1.8 13.9-5l-7.3-5.7c-2 1.4-4.7 2.2-6.6 2.2-6.4 0-12-3.8-13.8-9.6l-6.9 5.4C7.1 41.8 14.9 47 24 47z"
+                />
               </svg>
 
               <span className="text-xs font-semibold text-gray-700">
@@ -146,8 +161,7 @@ export default function GoogleReviews({ messages, locale }) {
             style={{
               scrollbarWidth: "none", // firefox
               msOverflowStyle: "none", // IE/Edge
-            }}
-          >
+            }}>
             {/* hide scrollbar chrome */}
             <style jsx>{`
               div::-webkit-scrollbar {
@@ -159,8 +173,7 @@ export default function GoogleReviews({ messages, locale }) {
               <div
                 key={idx}
                 data-review-card
-                className="min-w-[320px] sm:min-w-[360px] lg:min-w-[400px] rounded-2xl border border-gray-200 bg-white p-6 shadow-sm hover:shadow-md transition"
-              >
+                className="min-w-[320px] sm:min-w-[360px] lg:min-w-[400px] rounded-2xl border border-gray-200 bg-white p-6 shadow-sm hover:shadow-md transition">
                 {/* top */}
                 <div className="flex items-start justify-between gap-3">
                   <div className="flex items-center gap-3">
@@ -188,10 +201,22 @@ export default function GoogleReviews({ messages, locale }) {
 
                   {/* Google icon */}
                   <svg viewBox="0 0 48 48" className="h-5 w-5 shrink-0">
-                    <path fill="#EA4335" d="M24 9.5c3.1 0 5.9 1.1 8.1 3.2l5.9-5.9C34.4 3.3 29.6 1 24 1 14.9 1 7.1 6.2 3.3 13.7l6.9 5.4C12 13.3 17.6 9.5 24 9.5z" />
-                    <path fill="#34A853" d="M46.5 24.5c0-1.6-.1-2.8-.4-4H24v7.8h12.7c-.5 3-2.2 5.6-4.8 7.3l7.3 5.7c4.2-3.9 6.3-9.7 6.3-14.8z" />
-                    <path fill="#4A90E2" d="M10.2 28.9c-.5-1.4-.8-2.9-.8-4.4s.3-3 .8-4.4l-6.9-5.4C1.8 17.8 1 20.8 1 24s.8 6.2 2.3 9.3l6.9-5.4z" />
-                    <path fill="#FBBC05" d="M24 47c5.6 0 10.4-1.8 13.9-5l-7.3-5.7c-2 1.4-4.7 2.2-6.6 2.2-6.4 0-12-3.8-13.8-9.6l-6.9 5.4C7.1 41.8 14.9 47 24 47z" />
+                    <path
+                      fill="#EA4335"
+                      d="M24 9.5c3.1 0 5.9 1.1 8.1 3.2l5.9-5.9C34.4 3.3 29.6 1 24 1 14.9 1 7.1 6.2 3.3 13.7l6.9 5.4C12 13.3 17.6 9.5 24 9.5z"
+                    />
+                    <path
+                      fill="#34A853"
+                      d="M46.5 24.5c0-1.6-.1-2.8-.4-4H24v7.8h12.7c-.5 3-2.2 5.6-4.8 7.3l7.3 5.7c4.2-3.9 6.3-9.7 6.3-14.8z"
+                    />
+                    <path
+                      fill="#4A90E2"
+                      d="M10.2 28.9c-.5-1.4-.8-2.9-.8-4.4s.3-3 .8-4.4l-6.9-5.4C1.8 17.8 1 20.8 1 24s.8 6.2 2.3 9.3l6.9-5.4z"
+                    />
+                    <path
+                      fill="#FBBC05"
+                      d="M24 47c5.6 0 10.4-1.8 13.9-5l-7.3-5.7c-2 1.4-4.7 2.2-6.6 2.2-6.4 0-12-3.8-13.8-9.6l-6.9 5.4C7.1 41.8 14.9 47 24 47z"
+                    />
                   </svg>
                 </div>
 
@@ -211,8 +236,7 @@ export default function GoogleReviews({ messages, locale }) {
                   href={REVIEW_LINKS[idx] || REVIEW_LINKS[0]}
                   target="_blank"
                   rel="noreferrer"
-                  className="mt-5 inline-flex text-sm font-bold text-blue-600 hover:text-blue-700"
-                >
+                  className="mt-5 inline-flex text-sm font-bold text-blue-600 hover:text-blue-700">
                   {isRTL ? "قراءة على Google" : "Read on Google"}
                 </a>
               </div>

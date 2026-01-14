@@ -13,7 +13,7 @@ export default function PinsAnimation({ isRtl = false }) {
         <g transform="matrix(1.85948,0,0,1.85948,1295.75,431.808)" opacity="1">
           <path
             fill="none"
-            stroke="#d8a55b"
+            stroke="#EADCC3"
             strokeWidth="2"
             strokeLinecap="round"
             strokeLinejoin="round"

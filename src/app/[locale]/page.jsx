@@ -16,6 +16,7 @@ import FloatingActions from "@/components/FloatingActions";
 import HeroSection from "@/components/sections/HeroSection";
 import StatsCounter from "@/components/sections/StatsCounter";
 import GoogleReviews from "@/components/sections/GoogleReviews";
+import ConReviews from "@/components/sections/ConReviews";
 
 export default async function Page({ params }) {
   const { locale } = await params;
@@ -32,12 +33,10 @@ const messages = await getMessages(locale);
       <div className="" />
       <HeroSection locale={locale} messages={messages}/>
       <StatsCounter messages={messages} locale={locale}/>
-<ContactSection  locale={locale} messages={messages} />
-      {/* <Reviews messages={messages} locale={locale} /> */}
-      <GoogleReviews  locale={locale} messages={messages}/>
+<ConReviews locale={locale} messages={messages}/>
       {/* Landing content */}
       <WhyUs messages={messages} locale={locale} />
-<TrustedByUAE locale={locale} messages={messages} />
+{/* <TrustedByUAE locale={locale} messages={messages} /> */}
       <Steps messages={messages} locale={locale} />
       <Services messages={messages} locale={locale} />
       <Faq messages={messages} locale={locale} />
