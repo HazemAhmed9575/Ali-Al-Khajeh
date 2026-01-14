@@ -151,29 +151,51 @@ const scrollToSection = (id) => {
             </div>
 
             {/* Whats + Call + Language */}
-            <div className="flex items-center gap-2">
-              <a
-                href="https://wa.me/971503090203" 
-                target="_blank"
-                rel="noreferrer"
-                className="size-9 rounded-full bg-white/20 flex items-center justify-center
-                           text-white hover:bg-white/30 transition-all duration-300"
-                aria-label="WhatsApp"
-              >
-                <FaWhatsapp className="text-[16px]" />
-              </a>
+        <div className="flex items-center gap-2">
+  <a
+    href="https://wa.me/971503090203"
+    target="_blank"
+    rel="noreferrer"
+    onClick={() => {
+      if (typeof window !== "undefined") {
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({
+          event: "whatsapp_click",
+          action: "whatsapp",
+          phone: "971503090203",
+          url: "https://wa.me/971503090203",
+          position: "header_icons", // ✅ هنا مكان الزر
+        });
+      }
+    }}
+    className="size-9 rounded-full bg-white/20 flex items-center justify-center
+               text-white hover:bg-white/30 transition-all duration-300"
+    aria-label="WhatsApp"
+  >
+    <FaWhatsapp className="text-[16px]" />
+  </a>
 
-              <a
-                href="tel:+971503090203" 
-                className="size-9 rounded-full bg-white/20 flex items-center justify-center
-                           text-white hover:bg-white/30 transition-all duration-300"
-                aria-label="Call"
-              >
-                <FaPhoneAlt className="text-[15px]" />
-              </a>
-
-         
-            </div>
+  <a
+    href="tel:+971503090203"
+    onClick={() => {
+      if (typeof window !== "undefined") {
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({
+          event: "call_click",
+          action: "call",
+          phone: "+971503090203",
+          url: "tel:+971503090203",
+          position: "header_icons", // ✅ هنا مكان الزر
+        });
+      }
+    }}
+    className="size-9 rounded-full bg-white/20 flex items-center justify-center
+               text-white hover:bg-white/30 transition-all duration-300"
+    aria-label="Call"
+  >
+    <FaPhoneAlt className="text-[15px]" />
+  </a>
+</div>
           </div>
         </div>
       </div>

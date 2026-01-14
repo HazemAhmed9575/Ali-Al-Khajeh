@@ -9,6 +9,35 @@ export default function FloatingActions({
   const waLink = `https://wa.me/${whatsapp}`;
   const telLink = `tel:${phone}`;
 
+  // ✅ Push event to GTM
+  const pushEvent = (eventName, extra = {}) => {
+    if (typeof window === "undefined") return;
+
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      event: eventName,
+      ...extra,
+    });
+  };
+
+  const handleWhatsAppClick = () => {
+    pushEvent("whatsapp_click", {
+      action: "whatsapp",
+      phone: whatsapp,
+      url: waLink,
+      position: "floating",
+    });
+  };
+
+  const handleCallClick = () => {
+    pushEvent("call_click", {
+      action: "call",
+      phone: phone,
+      url: telLink,
+      position: "floating",
+    });
+  };
+
   return (
     <div className="fixed bottom-5 right-5 z-[9999] flex flex-col gap-3">
       {/* WhatsApp */}
@@ -16,6 +45,7 @@ export default function FloatingActions({
         href={waLink}
         target="_blank"
         rel="noreferrer"
+        onClick={handleWhatsAppClick}
         className="group relative flex items-center justify-center w-14 h-14 rounded-2xl bg-[#25D366] text-white shadow-[0_10px_30px_rgba(0,0,0,0.25)] border border-white/15 hover:scale-[1.06] active:scale-[0.98] transition-all duration-300"
         aria-label="WhatsApp"
       >
@@ -38,6 +68,7 @@ export default function FloatingActions({
       {/* Call */}
       <a
         href={telLink}
+        onClick={handleCallClick}
         className="group relative flex items-center justify-center w-14 h-14 rounded-2xl bg-[#85754E] text-[#0b1220] shadow-[0_10px_30px_rgba(0,0,0,0.25)] border border-white/15 hover:scale-[1.06] active:scale-[0.98] transition-all duration-300"
         aria-label="Call"
       >
