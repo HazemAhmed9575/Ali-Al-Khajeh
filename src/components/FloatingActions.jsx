@@ -17,9 +17,15 @@ export default function FloatingActions({
     window.dataLayer.push({
       event: "link_click",
       variant: "click_url",
+
+
+      "Click URL": url,
+
+ 
       click_url: url,
-      click_type: type,       // whatsapp | call
-      position: position,     // contact_logo_section
+
+      click_type: type,
+      position,
     });
   };
 
@@ -53,7 +59,10 @@ export default function FloatingActions({
           hover:scale-[1.06] active:scale-[0.98] transition-all duration-300 cursor-pointer"
           aria-label="WhatsApp"
         >
-          <FaWhatsapp className="text-[26px]" />
+          {/* ✅ THIS fixes Click Text */}
+          <span className="sr-only">WhatsApp</span>
+
+          <FaWhatsapp className="text-[26px] pointer-events-none" />
         </a>
 
         {/* Call */}
@@ -65,7 +74,10 @@ export default function FloatingActions({
           hover:scale-[1.06] active:scale-[0.98] transition-all duration-300 cursor-pointer"
           aria-label="Call"
         >
-          <FaPhoneAlt className="text-[22px]" />
+          {/* ✅ THIS fixes Click Text */}
+          <span className="sr-only">Call</span>
+
+          <FaPhoneAlt className="text-[22px] pointer-events-none" />
         </a>
       </div>
     </div>
