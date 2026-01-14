@@ -87,6 +87,42 @@ const scrollToSection = (id) => {
     router.push("/" + segments.join("/"));
   };
 
+
+ const pushLinkClick = ({ url, type, position }) => {
+    if (typeof window === "undefined") return;
+
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      event: "link_click",
+      variant: "click_url",
+      click_url: url,
+      click_type: type,     // whatsapp | call
+      position,             // header_icons
+    });
+  };
+
+  // ✅ track + open
+  const trackAndOpen = (e, url, type) => {
+    e.preventDefault();
+
+    pushLinkClick({
+      url,
+      type,
+      position: "header_icons",
+    });
+
+    setTimeout(() => {
+      try {
+        if (url.startsWith("tel:")) {
+          window.location.href = url;
+        } else {
+          window.open(url, "_blank", "noopener,noreferrer");
+        }
+      } catch (err) {
+        window.location.href = url;
+      }
+    }, 150);
+  };
   return (
     <>
       {/* ✅ TOP BAR (NOT FIXED - scrolls away) */}
@@ -156,29 +192,11 @@ const scrollToSection = (id) => {
   {/* WhatsApp */}
   <a
     href="https://wa.me/971503090203"
-    target="_blank"
-    rel="noreferrer"
-    onClick={(e) => {
-      e.preventDefault();
-
-      const url = "https://wa.me/971503090203";
-
-      if (typeof window !== "undefined") {
-        window.dataLayer = window.dataLayer || [];
-        window.dataLayer.push({
-          event: "link_click",
-          variant: "click_url",
-          click_url: url,
-          click_type: "whatsapp",
-          position: "header_icons",
-        });
-      }
-
-      setTimeout(() => {
-        window.open(url, "_blank", "noopener,noreferrer");
-      }, 150);
-    }}
-    className="size-9 rounded-full bg-white/20 flex items-center justify-center text-white hover:bg-white/30 transition-all duration-300"
+    onClick={(e) =>
+      trackAndOpen(e, "https://wa.me/971503090203", "whatsapp")
+    }
+    className="size-9 rounded-full bg-white/20 flex items-center justify-center
+               text-white hover:bg-white/30 transition-all duration-300"
     aria-label="WhatsApp"
   >
     <FaWhatsapp className="text-[16px]" />
@@ -187,32 +205,15 @@ const scrollToSection = (id) => {
   {/* Call */}
   <a
     href="tel:+971503090203"
-    onClick={(e) => {
-      e.preventDefault();
-
-      const url = "tel:+971503090203";
-
-      if (typeof window !== "undefined") {
-        window.dataLayer = window.dataLayer || [];
-        window.dataLayer.push({
-          event: "link_click",
-          variant: "click_url",
-          click_url: url,
-          click_type: "call",
-          position: "header_icons",
-        });
-      }
-
-      setTimeout(() => {
-        window.location.href = url;
-      }, 150);
-    }}
-    className="size-9 rounded-full bg-white/20 flex items-center justify-center text-white hover:bg-white/30 transition-all duration-300"
+    onClick={(e) => trackAndOpen(e, "tel:+971503090203", "call")}
+    className="size-9 rounded-full bg-white/20 flex items-center justify-center
+               text-white hover:bg-white/30 transition-all duration-300"
     aria-label="Call"
   >
     <FaPhoneAlt className="text-[15px]" />
   </a>
 </div>
+
           </div>
         </div>
       </div>
