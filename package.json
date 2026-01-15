@@ -5,8 +5,9 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
-    "lint": "eslint"
+    "start": "next start -p 3005",
+    "lint": "eslint",
+      "export": "next export"
   },
   "dependencies": {
     "framer-motion": "^12.26.2",

@@ -1,5 +1,9 @@
 // src/app/[locale]/layout.jsx
 
+export async function generateStaticParams() {
+  return [{ locale: "en" }, { locale: "ar" }];
+}
+
 export async function generateMetadata({ params }) {
   const { locale } = params;
 
@@ -57,7 +61,7 @@ export async function generateMetadata({ params }) {
 }
 
 export default async function LocaleLayout({ children, params }) {
-  const { locale } = params;
+  const { locale } = await params;
 
   return (
     <html lang={locale} dir={locale === "ar" ? "rtl" : "ltr"}>

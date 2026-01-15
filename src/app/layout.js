@@ -3,7 +3,7 @@ import Script from "next/script";
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html>
       <head>
         <Script
           id="gtm"
