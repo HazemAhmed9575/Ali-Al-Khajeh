@@ -13,6 +13,7 @@ import {
 } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { useEffect, useState } from "react";
+
 export default function Navbar({ messages, locale }) {
   const router = useRouter();
   const pathname = usePathname();
@@ -20,14 +21,28 @@ export default function Navbar({ messages, locale }) {
 
   const sections = [
     { id: "home", label: t(messages, "nav.home") },
-    { id: "reviews", label: t(messages, "nav.reviews") },
-    { id: "why-us", label: t(messages, "nav.why") },
-    { id: "steps", label: t(messages, "nav.steps") },
-    { id: "services", label: t(messages, "nav.services") },
     { id: "faq", label: t(messages, "nav.faq") },
+    { id: "consultation", label: t(messages, "nav.contact") },
+    { id: "why-us", label: t(messages, "nav.why") },
+    { id: "services", label: t(messages, "nav.services") },
+    { id: "steps", label: t(messages, "nav.steps") },
   ];
 
-  const [activeSection, setActiveSection] = useState("contact");
+  const [activeSection, setActiveSection] = useState("");
+
+  // ✅ NEW: sticky only after scroll
+  const [stuck, setStuck] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => {
+      // ✅ بعد ما ينزل 40px يشتغل sticky
+      setStuck(window.scrollY > 40);
+    };
+
+    onScroll(); // init
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   useEffect(() => {
     const ids = sections.map((s) => s.id);
@@ -83,24 +98,24 @@ export default function Navbar({ messages, locale }) {
   };
 
   const pushLinkClick = ({ url, type, text, position }) => {
-  if (typeof window === "undefined") return;
+    if (typeof window === "undefined") return;
 
-  window.dataLayer = window.dataLayer || [];
-  window.dataLayer.push({
-    event: "link_click",
-    variant: "click_url",
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      event: "link_click",
+      variant: "click_url",
 
-    click_url: url,
-    "Click URL": url,
+      click_url: url,
+      "Click URL": url,
 
-    click_type: type,
-    click_text: text,
-    position: position,
-  });
-};
+      click_type: type,
+      click_text: text,
+      position: position,
+    });
+  };
 
   // ✅ track + open
- const trackAndOpen = (e, url, type) => {
+  const trackAndOpen = (e, url, type) => {
     e.preventDefault();
 
     pushLinkClick({ url, type });
@@ -132,7 +147,8 @@ export default function Navbar({ messages, locale }) {
                 rel="noreferrer"
                 className="size-9 rounded-full bg-white/20 flex items-center justify-center
                            text-white hover:bg-white/30 transition-all duration-300"
-                aria-label="LinkedIn">
+                aria-label="LinkedIn"
+              >
                 <FaLinkedinIn className="text-[16px]" />
               </a>
 
@@ -142,7 +158,8 @@ export default function Navbar({ messages, locale }) {
                 rel="noreferrer"
                 className="size-9 rounded-full bg-white/20 flex items-center justify-center
                            text-white hover:bg-white/30 transition-all duration-300"
-                aria-label="YouTube">
+                aria-label="YouTube"
+              >
                 <FaYoutube className="text-[16px]" />
               </a>
 
@@ -152,7 +169,8 @@ export default function Navbar({ messages, locale }) {
                 rel="noreferrer"
                 className="size-9 rounded-full bg-white/20 flex items-center justify-center
                            text-white hover:bg-white/30 transition-all duration-300"
-                aria-label="X">
+                aria-label="X"
+              >
                 <FaXTwitter className="text-[16px]" />
               </a>
 
@@ -162,7 +180,8 @@ export default function Navbar({ messages, locale }) {
                 rel="noreferrer"
                 className="size-9 rounded-full bg-white/20 flex items-center justify-center
                            text-white hover:bg-white/30 transition-all duration-300"
-                aria-label="Instagram">
+                aria-label="Instagram"
+              >
                 <FaInstagram className="text-[16px]" />
               </a>
 
@@ -172,46 +191,57 @@ export default function Navbar({ messages, locale }) {
                 rel="noreferrer"
                 className="size-9 rounded-full bg-white/20 flex items-center justify-center
                            text-white hover:bg-white/30 transition-all duration-300"
-                aria-label="Facebook">
+                aria-label="Facebook"
+              >
                 <FaFacebookF className="text-[16px]" />
               </a>
             </div>
 
             {/* Whats + Call + Language */}
-           <div className="flex items-center gap-2">
-  {/* WhatsApp */}
-  <a
-    href="https://wa.me/971503090203"
-    onClick={(e) => trackAndOpen(e, "https://wa.me/971503090203", "whatsapp")}
-    className="size-9 rounded-full bg-white/20 flex items-center justify-center
+            <div className="flex items-center gap-2">
+              {/* WhatsApp */}
+              <a
+                href="https://wa.me/971503090203"
+                onClick={(e) =>
+                  trackAndOpen(e, "https://wa.me/971503090203", "whatsapp")
+                }
+                className="size-9 rounded-full bg-white/20 flex items-center justify-center
                text-white hover:bg-white/30 transition-all duration-300"
-    aria-label="WhatsApp"
-  >
-    <span className="sr-only">WhatsApp</span>
-    <FaWhatsapp className="text-[16px] pointer-events-none" />
-  </a>
+                aria-label="WhatsApp"
+              >
+                <span className="sr-only">WhatsApp</span>
+                <FaWhatsapp className="text-[16px] pointer-events-none" />
+              </a>
 
-  {/* Call */}
-  <a
-    href="tel:+971503090203"
-    onClick={(e) => trackAndOpen(e, "tel:+971503090203", "call")}
-    className="size-9 rounded-full bg-white/20 flex items-center justify-center
+              {/* Call */}
+              <a
+                href="tel:+971503090203"
+                onClick={(e) =>
+                  trackAndOpen(e, "tel:+971503090203", "call")
+                }
+                className="size-9 rounded-full bg-white/20 flex items-center justify-center
                text-white hover:bg-white/30 transition-all duration-300"
-    aria-label="Call"
-  >
-    <span className="sr-only">Call</span>
-    <FaPhoneAlt className="text-[15px] pointer-events-none" />
-  </a>
-</div>
+                aria-label="Call"
+              >
+                <span className="sr-only">Call</span>
+                <FaPhoneAlt className="text-[15px] pointer-events-none" />
+              </a>
+            </div>
           </div>
         </div>
       </div>
 
-      {/* ✅ NAVBAR ONLY Sticky/Fixed */}
-      <header className="sticky top-0 z-50 border-b border-black/5 bg-white/70 backdrop-blur">
+      {/* ✅ NAVBAR: normal at top, sticky AFTER scroll */}
+     <header
+  className={`
+    ${stuck ? "fixed top-0 left-0 w-full z-50" : "relative z-40"}
+    border-b border-black/5
+    ${stuck ? "bg-white/70 backdrop-blur" : "bg-white"}
+  `}
+>
         <div className="container mx-auto px-4">
           <div className="flex h-16 items-center justify-between">
-            <button
+          <button
               onClick={() => scrollToSection("top")}
               className="relative inline-block top-1"
               aria-label="Go to top">
@@ -303,7 +333,8 @@ export default function Navbar({ messages, locale }) {
             ? "text-[#85754E] bg-[#85754E]/10"
             : "text-gray-700 hover:text-[#85754E] hover:bg-[#85754E]/5"
         }
-      `}>
+      `}
+                >
                   {/* label */}
                   <span className="relative z-10">{item.label}</span>
 
@@ -323,7 +354,8 @@ export default function Navbar({ messages, locale }) {
             <button
               onClick={switchLanguage}
               className="ml-2 rounded-full cursor-pointer bg-[#85754E] px-4 py-2 text-xs font-bold text-white
-                           hover:bg-[#85754E]/90 transition-all">
+                           hover:bg-[#85754E]/90 transition-all"
+            >
               {isRTL ? "English" : "العربية"}
             </button>
           </div>

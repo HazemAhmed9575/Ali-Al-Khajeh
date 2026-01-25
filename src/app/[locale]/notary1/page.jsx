@@ -1,22 +1,22 @@
 import { getMessages } from "@/i18n/getMessages";
 import { t } from "@/i18n/t";
 
-import IntroGate from "@/components/IntroGate";
-import Navbar from "@/components/Navbar";
+import IntroGate from "@/components/notary1/IntroGate";
+import Navbar from "@/components/notary1/Navbar";
 
-import WhyUs from "@/components/sections/WhyUs";
-import Services from "@/components/sections/Services";
-import Steps from "@/components/sections/Steps";
-import Faq from "@/components/sections/Faq";
-import Reviews from "@/components/sections/Reviews";
-import ContactSection from "@/components/sections/ContactSection";
-import TrustedByUAE from "@/components/sections/TrustedByUAE";
-import Footer from "@/components/Footer";
-import FloatingActions from "@/components/FloatingActions";
-import HeroSection from "@/components/sections/HeroSection";
-import StatsCounter from "@/components/sections/StatsCounter";
-import GoogleReviews from "@/components/sections/GoogleReviews";
-import ConReviews from "@/components/sections/ConReviews";
+import WhyUs from "@/components/notary1/sections/WhyUs";
+import Services from "@/components/notary1/sections/Services";
+import Steps from "@/components/notary1/sections/Steps";
+import Faq from "@/components/notary1/sections/Faq";
+import Reviews from "@/components/notary1/sections/Reviews";
+import ContactSection from "@/components/notary1/sections/ContactSection";
+import TrustedByUAE from "@/components/notary1/sections/TrustedByUAE";
+import Footer from "@/components/notary1/Footer";
+import FloatingActions from "@/components/notary1/FloatingActions";
+import HeroSection from "@/components/notary1/sections/HeroSection";
+import StatsCounter from "@/components/notary1/sections/StatsCounter";
+import GoogleReviews from "@/components/notary1/sections/GoogleReviews";
+import ConReviews from "@/components/notary1/sections/ConReviews";
 
 export default async function Page({ params }) {
   const { locale } = await params;

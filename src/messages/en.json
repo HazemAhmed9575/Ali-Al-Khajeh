@@ -12,6 +12,7 @@
     "nav": {
         "home":"Home",
     "why": "Why Us",
+     "contact":" Contact us ",
     "services": "Services",
     "steps": "Steps",
     "faq": "FAQ",
@@ -163,9 +164,150 @@
   "items": [
     { "value": 20, "suffix": "+", "label": "Years Experience" },
     { "value": 500, "suffix": "+", "label": "Cases Won" },
-    { "value": 26, "suffix": "%", "label": "Client Satisfaction" },
+    { "value": 86, "suffix": "%", "label": "Client Satisfaction" },
     { "value": 24, "suffix": "/7", "label": "Expert Support" }
   ]
-}
+},
+ "corporateIssues": {
+    "hero": {
+      "title": "We Protect Your Investments and Lead Your Cases\nto Victory by the Power of Law",
+      "desc": "At Ali Al Khajeh Law Office, we provide smart litigation strategies to protect corporate assets and resolve commercial disputes with the highest professional standards in the UAE.",
+      "cta": "Request a Legal Consultation Now",
+      "badges": {
+        "licensed": "Licensed & Accredited",
+        "confidential": "Full Confidentiality",
+        "fast": "Fast Response"
+      }
+    },
+
+    "faq": {
+      "title": "Legal Solutions for Your Business Challenges",
+      "subtitle": "Click on a question to view the solution we provide to our clients",
+      "items": {
+        "q1": {
+          "question": "Are you facing difficulties collecting overdue commercial debts?",
+          "answer": "We understand that cash flow is the backbone of any business. Through our smart debt recovery strategies, we have successfully recovered overdue debts exceeding AED 10 million, relying primarily on fast amicable settlements before resorting to litigation."
+        },
+        "q2": {
+          "question": "Are partner disputes threatening your company’s stability?",
+          "answer": "Management disputes can severely impact a business entity. Our priority is protecting the company itself. We have resolved dozens of complex partner disputes through legal restructuring, saving our clients from liquidation losses and ensuring business continuity."
+        },
+        "q3": {
+          "question": "Have you suffered from breach of contracts or supply agreements?",
+          "answer": "Weak contracts lead to significant losses. Our specialized team analyzes contracts and proves damages with precision. We have secured substantial financial compensations for our clients in major construction and supply cases through solid legal case-building."
+        }
+      }
+    },
+
+    "consulting": {
+      "badge": "Strategic Legal Partners",
+      "heading": "We Safeguard Your Business Interests with Solid Legal Expertise",
+      "desc": "With over two decades of experience in commercial litigation and corporate law, we provide our clients with stable legal insight and strategic guidance to navigate the complexities of the modern business environment.",
+      "form": {
+        "title": "Legal Consultation",
+        "status": {
+          "validation": "Please complete all required fields.",
+          "success": "Your request has been successfully submitted. We will contact you shortly.",
+          "error": "An unexpected error occurred. Please try again."
+        },
+        "firstName": {
+          "label": "First Name"
+        },
+        "lastName": {
+          "label": "Last Name"
+        },
+        "email": {
+          "label": "Email Address",
+          "placeholder": "example@company.com"
+        },
+        "phone": {
+          "label": "Phone Number",
+          "placeholder": "Enter your phone number"
+        },
+        "message": {
+          "label": "Consultation Details",
+          "placeholder": "Explain the legal challenge your company is facing, and our team will review it."
+        },
+        "submit": "Submit Request",
+        "sending": "Sending...",
+           "validation": {
+          "email": "Please enter a valid email address",
+          "phone": "Please enter a valid phone number"
+        }
+      },
+      "signature": {
+        "name": "Ali Al Khajeh Law Office",
+        "office": "Ali Al Khajeh Law Office for Legal Consultancy",
+        "title": "Managing Partner"
+      },
+         "cta": {
+        "label": "Free Consultation",
+        "ariaLabel": "Free consultation button"
+      }
+    },
+
+    "whyChoose": {
+      "kicker": "Corporate Law",
+      "title": "Our Corporate Law Services",
+      "imageAlt": "Corporate law services and commercial dispute resolution",
+      "cards": {
+        "confidentiality": {
+          "title": "Partner Dispute Resolution",
+          "desc": "Specialized legal solutions for management disputes, shareholding arrangements, and protection of minority partners’ rights to ensure business stability."
+        },
+        "strategy": {
+          "title": "Commercial Litigation",
+          "desc": "Strong legal representation before courts in contract breach cases and compensation claims, supported by solid legal foundations."
+        },
+        "results": {
+          "title": "Debt Collection",
+          "desc": "Effective strategies for recovering financial dues from individuals and companies, with a strong focus on fast amicable settlements before litigation."
+        },
+        "trademark": {
+          "title": "Trademark Protection",
+          "desc": "Trademark registration and protection against infringement and unfair competition, ensuring preservation of companies’ intellectual property rights."
+        }
+      }
+    },
+
+    "services": {
+      "title": "Why Do Business Owners Choose Us?",
+      "items": {
+        "business": {
+          "title": "Deep Local Expertise",
+          "desc": "In-depth understanding of UAE laws and local and federal court procedures, ensuring accurate handling of commercial cases."
+        },
+        "family": {
+          "title": "Strategic Legal Solutions",
+          "desc": "We resort to litigation only when it is the fastest and most effective option for our clients, focusing on smart legal solutions."
+        },
+        "insurance": {
+          "title": "Absolute Confidentiality",
+          "desc": "We protect your company’s secrets and commercial reputation as a top priority, with full adherence to the highest professional confidentiality standards."
+        }
+      }
+    },
+
+    "process": {
+      "kicker": "How Do We Handle Your Case?",
+      "title": "3 Simple Steps Between You and Securing Your Legal Position",
+      "steps": {
+        "review": {
+          "title": "Initial Assessment",
+          "desc": "We review the case file and documents to determine success probability and potential risks."
+        },
+        "strategy": {
+          "title": "Strategy Development",
+          "desc": "We design an action plan (amicable or litigation-based) aligned with your company’s best interests."
+        },
+        "action": {
+          "title": "Execution & Resolution",
+          "desc": "We take legal action with strong representation before the competent authorities until rights are fully recovered."
+        }
+      }
+    }
+
+
+  }
 
 }
