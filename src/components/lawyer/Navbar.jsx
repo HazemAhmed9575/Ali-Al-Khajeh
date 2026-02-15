@@ -21,11 +21,10 @@ export default function Navbar({ messages, locale }) {
 
   const sections = [
     { id: "home", label: t(messages, "nav.home") },
-    { id: "faq", label: t(messages, "nav.faq") },
-    { id: "consultation", label: t(messages, "nav.contact") },
-    { id: "why-us", label: t(messages, "nav.why") },
+        { id: "reviews", label: t(messages, "nav.reviews") },
     { id: "services", label: t(messages, "nav.services") },
-    { id: "steps", label: t(messages, "nav.steps") },
+    { id: "consultation", label: t(messages, "nav.contact") },
+    { id: "faq", label: t(messages, "nav.faq") },
   ];
 
   const [activeSection, setActiveSection] = useState("");

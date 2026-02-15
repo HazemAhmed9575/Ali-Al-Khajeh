@@ -9,7 +9,7 @@ export default function HeroSection({ messages, locale }) {
   const isRTL = locale === "ar";
 
   // ✅ title includes \n -> render lines
-  const title = t(messages, "corporateIssues.hero.title") || "";
+  const title = t(messages, "lawyer.hero.title") || "";
   const titleLines = title.split("\n");
 
   return (
@@ -34,7 +34,7 @@ export default function HeroSection({ messages, locale }) {
 
       {/* Desc */}
       <p className="text-[14px] sm:text-[15px] lg:text-base mb-6 lg:mb-10 max-w-xl leading-relaxed text-gray-600">
-        {t(messages, "corporateIssues.hero.desc")}
+        {t(messages, "lawyer.hero.desc")}
       </p>
 
       {/* Badges */}
@@ -44,14 +44,14 @@ export default function HeroSection({ messages, locale }) {
         <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gray-100 border border-gray-200">
           <span className="size-2 rounded-full bg-gray-500" />
           <span className="text-sm font-bold text-gray-800">
-            {t(messages, "corporateIssues.hero.badges.confidential")}
+            {t(messages, "lawyer.hero.badges.confidential")}
           </span>
         </div>
 
         <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gray-100 border border-gray-200">
           <span className="size-2 rounded-full bg-gray-500" />
           <span className="text-sm font-bold text-gray-800">
-            {t(messages, "corporateIssues.hero.badges.fast")}
+            {t(messages, "lawyer.hero.badges.fast")}
           </span>
         </div>
       </div>
@@ -59,7 +59,7 @@ export default function HeroSection({ messages, locale }) {
   href="#consultation"
   className="mt-6 inline-flex w-fit items-center justify-center rounded-xl bg-[#85754E] px-6 py-3 text-sm font-bold text-white hover:bg-[#6f623f] transition"
 >
-  {t(messages, "corporateIssues.hero.cta")}
+  {t(messages, "lawyer.hero.cta")}
 </a>
     </div>
 

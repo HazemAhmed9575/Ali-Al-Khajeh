@@ -1,0 +1,11 @@
+.line-path {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  animation: drawLine 6s ease-in-out forwards;
+}
+
+@keyframes drawLine {
+  to {
+    stroke-dashoffset: 0;
+  }
+}

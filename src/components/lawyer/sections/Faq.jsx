@@ -10,24 +10,24 @@ export default function Faq({ messages, locale }) {
 
   const faqs = [
     {
-      q: "corporateIssues.faq.items.q1.question",
-      a: "corporateIssues.faq.items.q1.answer",
+      q: "lawyer.faq.items.q1.question",
+      a: "lawyer.faq.items.q1.answer",
     },
     {
-      q: "corporateIssues.faq.items.q2.question",
-      a: "corporateIssues.faq.items.q2.answer",
+      q: "lawyer.faq.items.q2.question",
+      a: "lawyer.faq.items.q2.answer",
     },
     {
-      q: "corporateIssues.faq.items.q3.question",
-      a: "corporateIssues.faq.items.q3.answer",
+      q: "lawyer.faq.items.q3.question",
+      a: "lawyer.faq.items.q3.answer",
     },
     {
-      q: "corporateIssues.faq.items.q4.question",
-      a: "corporateIssues.faq.items.q4.answer",
+      q: "lawyer.faq.items.q4.question",
+      a: "lawyer.faq.items.q4.answer",
     },
     {
-      q: "corporateIssues.faq.items.q5.question",
-      a: "corporateIssues.faq.items.q5.answer",
+      q: "lawyer.faq.items.q5.question",
+      a: "lawyer.faq.items.q5.answer",
     }
   ];
 

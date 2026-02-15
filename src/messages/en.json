@@ -9,16 +9,17 @@
     "subtitle": "Premium legal expertise and professional notary services — fast, confidential, and reliable.",
     "enter": "Entering..."
   },
-    "nav": {
-        "home":"Home",
+  "nav": {
+    "home": "Home",
     "why": "Why Us",
-     "contact":" Contact us ",
+    "contact": " Contact us ",
     "services": "Services",
     "steps": "Steps",
     "faq": "FAQ",
-    "reviews": "Testimonials"
+    "reviews": "Testimonials",
+    "Ourmessage":"Our Message"
   },
-    "hero": {
+  "hero": {
     "title": "Officialize your contracts and transactions from the comfort of your home with Ali Al Khaja Law Firm.",
     "desc": "A licensed private notary. We save you the hassle of waiting and crowded offices — we come to you wherever you are to complete your transaction immediately.",
     "badges": {
@@ -27,10 +28,10 @@
       "fast": "Fast Service"
     }
   },
-   "contact": {
+  "contact": {
     "title": " Request a Private Notary",
     "name": "Full Name",
-   
+
     "subject": "Subject",
     "subjects": {
       "familyLaw": " Power of Attorney (General/Special)",
@@ -41,7 +42,7 @@
     "message": "Message...",
     "btn": "Make An Appointment"
   },
-    "awards": {
+  "awards": {
     "sectionTitle": "Officially Approved & Licensed By",
     "items": {
       "lawyersAssociation": "Lawyers Association",
@@ -49,129 +50,163 @@
       "abuDhabiJudicialDepartment": "Abu Dhabi Judicial Department"
     }
   },
-"whyChoose": {
-  "kicker": "Why Us",
-  "title": "Why Choose a Private Notary Public?",
-  "imageAlt": "Smart solutions that save your time and effort",
-  "cards": {
-    "confidentiality": {
-      "title": "We Come to You Anywhere",
-      "desc": "Whether you're in your office, home, or anywhere in Abu Dhabi, we come to you to complete the notarization."
+  "whyChoose": {
+    "kicker": "Why Us",
+    "title": "Why Choose a Private Notary Public?",
+    "imageAlt": "Smart solutions that save your time and effort",
+    "cards": {
+      "confidentiality": {
+        "title": "We Come to You Anywhere",
+        "desc": "Whether you're in your office, home, or anywhere in Abu Dhabi, we come to you to complete the notarization."
+      },
+      "strategy": {
+        "title": "Flexible Appointments",
+        "desc": "We operate outside official working hours and during holidays to fit your busy schedule."
+      },
+      "results": {
+        "title": "Instant Approval",
+        "desc": "Our services are 100% legal and immediately approved by all government entities and banks."
+      }
     },
-    "strategy": {
-      "title": "Flexible Appointments",
-      "desc": "We operate outside official working hours and during holidays to fit your busy schedule."
-    },
-    "results": {
-      "title": "Instant Approval",
-      "desc": "Our services are 100% legal and immediately approved by all government entities and banks."
+    "quote": {
+      "text": "“The best legal service I've ever received — fast, professional, and trustworthy.”",
+      "author": "— Client Feedback"
     }
   },
-  "quote": {
-    "text": "“The best legal service I've ever received — fast, professional, and trustworthy.”",
-    "author": "— Client Feedback"
-  }
-},
-"services": {
-  "title": "What Transactions Do We Notarize?",
-  "items": {
-    "business": {
-      "title": "General & Special Power of Attorney"
-    },
-    "family": {
-      "title": "Company Incorporation Contracts"
-    },
-    "insurance": {
-      "title": "Meeting Minutes"
-    },
-    "industrial": {
-      "title": "Waiver & Debt Declarations"
-    },
-    "auction": {
-      "title": "Ship & Boat Sale Contracts"
-    },
-    "employment": {
-      "title": "Legal Notices"
+  "services": {
+    "title": "What Transactions Do We Notarize?",
+    "items": {
+      "business": {
+        "title": "General & Special Power of Attorney"
+      },
+      "family": {
+        "title": "Company Incorporation Contracts"
+      },
+      "insurance": {
+        "title": "Meeting Minutes"
+      },
+      "industrial": {
+        "title": "Waiver & Debt Declarations"
+      },
+      "auction": {
+        "title": "Ship & Boat Sale Contracts"
+      },
+      "employment": {
+        "title": "Legal Notices"
+      }
     }
-  }
-},
-"process": {
-  "kicker": "How Does It Work?",
-  "title": "3 Simple Steps Away from Document Notarization",
-  "steps": {
-    "review": {
-      "title": "Contact Us",
-      "desc": "Call us or fill out the form to choose the transaction type and the best time."
-    },
-    "strategy": {
-      "title": "Prepare Documents",
-      "desc": "Our team reviews contract or power of attorney drafts to ensure legal compliance."
-    },
-    "action": {
-      "title": "Notarization at Your Location",
-      "desc": "The notary visits your location for instant signing and official stamping."
+  },
+  "process": {
+    "kicker": "How Does It Work?",
+    "title": "3 Simple Steps Away from Document Notarization",
+    "steps": {
+      "review": {
+        "title": "Contact Us",
+        "desc": "Call us or fill out the form to choose the transaction type and the best time."
+      },
+      "strategy": {
+        "title": "Prepare Documents",
+        "desc": "Our team reviews contract or power of attorney drafts to ensure legal compliance."
+      },
+      "action": {
+        "title": "Notarization at Your Location",
+        "desc": "The notary visits your location for instant signing and official stamping."
+      }
     }
-  }
-},
-"faq": {
-  "title": "Frequently Asked Questions",
-  "subtitle": "Quick answers to your questions about our private notary service",
-  "items": {
-    "q1": {
-      "question": "Is your notarization officially recognized?",
-      "answer": "Yes. Our private notary is licensed and officially approved by the Abu Dhabi Judicial Department. All documents notarized through us carry the same legal validity as those issued by government notary centers."
-    },
-    "q2": {
-      "question": "Can you visit my office or home?",
-      "answer": "Absolutely — this is our key advantage. We can come to you anywhere within Abu Dhabi (office, home, or even hospital) at a time that suits you to complete the process."
-    },
-    "q3": {
-      "question": "How long does the notarization take?",
-      "answer": "Once the appointment is confirmed and the document draft is reviewed, notarization and signing are completed in the same session and you receive your notarized document immediately. The session usually takes no more than 15–30 minutes."
-    },
-    "q4": {
-      "question": "What documents are required for notarization?",
-      "answer": "In general, a valid original Emirates ID is required for all signing parties, or a passport. Some special transactions (such as company contracts) may require additional documents, which will be clarified upon contact."
+  },
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "subtitle": "Quick answers to your questions about our private notary service",
+    "items": {
+      "q1": {
+        "question": "Is your notarization officially recognized?",
+        "answer": "Yes. Our private notary is licensed and officially approved by the Abu Dhabi Judicial Department. All documents notarized through us carry the same legal validity as those issued by government notary centers."
+      },
+      "q2": {
+        "question": "Can you visit my office or home?",
+        "answer": "Absolutely — this is our key advantage. We can come to you anywhere within Abu Dhabi (office, home, or even hospital) at a time that suits you to complete the process."
+      },
+      "q3": {
+        "question": "How long does the notarization take?",
+        "answer": "Once the appointment is confirmed and the document draft is reviewed, notarization and signing are completed in the same session and you receive your notarized document immediately. The session usually takes no more than 15–30 minutes."
+      },
+      "q4": {
+        "question": "What documents are required for notarization?",
+        "answer": "In general, a valid original Emirates ID is required for all signing parties, or a passport. Some special transactions (such as company contracts) may require additional documents, which will be clarified upon contact."
+      }
     }
-  }
-},
-"Reviews": {
-  "title": "What Our Clients Say",
-  "items": [
-    {
-      "text": "A word of thanks and appreciation to Ali Al Khaja Law Office for their efforts, follow-up, and respectful service — especially Consultant Ibrahim Naji. Based on my experience, I highly recommend dealing with the office due to the lawyers’ expertise, their interaction with you, their professional approach, and the fact that everything is organized, outstanding, and fast.",
-      "name": "Suhail Al Basheer"
-    },
-    {
-      "text": "An office that excels in follow-up, with a large number of consultants. The Notary Public department has extensive experience. Special thanks to Ms. Rose for her follow-up on all my cases.",
-      "name": "Hamad Al Hammadi"
-    },
-    {
-      "text": "An excellent office in all cases, with fast completion of Notary Public services. I thank them for their efforts.",
-      "name": "Nidal Abu Jazar"
-    },
-    {
-      "text": "Mashallah, the best experience. All thanks and appreciation to Ali Al Khaja Law Office and the entire team for their high professionalism and fast handling of all details, whether in the Notary Public department or with the legal consultants. You truly set an example to follow in the legal field.",
-      "name": "Marwa Baker"
-    },
-    {
-      "text": "Ali Al Khaja is a highly professional firm with deep knowledge of laws and regulations. They provide fast notarization services.",
-      "name": "Vipin Das"
+  },
+  "Reviews": {
+    "title": "What Our Clients Say",
+    "items": [
+      {
+        "text": "A word of thanks and appreciation to Ali Al Khaja Law Office for their efforts, follow-up, and respectful service — especially Consultant Ibrahim Naji. Based on my experience, I highly recommend dealing with the office due to the lawyers’ expertise, their interaction with you, their professional approach, and the fact that everything is organized, outstanding, and fast.",
+        "name": "Suhail Al Basheer"
+      },
+      {
+        "text": "An office that excels in follow-up, with a large number of consultants. The Notary Public department has extensive experience. Special thanks to Ms. Rose for her follow-up on all my cases.",
+        "name": "Hamad Al Hammadi"
+      },
+      {
+        "text": "An excellent office in all cases, with fast completion of Notary Public services. I thank them for their efforts.",
+        "name": "Nidal Abu Jazar"
+      },
+      {
+        "text": "Mashallah, the best experience. All thanks and appreciation to Ali Al Khaja Law Office and the entire team for their high professionalism and fast handling of all details, whether in the Notary Public department or with the legal consultants. You truly set an example to follow in the legal field.",
+        "name": "Marwa Baker"
+      },
+      {
+        "text": "Ali Al Khaja is a highly professional firm with deep knowledge of laws and regulations. They provide fast notarization services.",
+        "name": "Vipin Das"
+      }
+    ]
+  },
+  "stats": {
+    "items": [
+      { "value": 20, "suffix": "+", "label": "Years Experience" },
+      { "value": 500, "suffix": "+", "label": "Cases Won" },
+      { "value": 86, "suffix": "%", "label": "Client Satisfaction" },
+      { "value": 24, "suffix": "/7", "label": "Expert Support" }
+    ]
+  },
+  "Footer": {
+  "brand": {
+    "name1": "LEX",
+    "name2": "PREMIUM",
+    "description": "Ali Al Khajeh Law Firm & Legal Consultancy"
+  },
+  "quickLinks": {
+    "title": "Quick Links",
+    "links": {
+      "services": "Contact Us",
+      "attorneys": "Why Choose Us",
+      "terms": "Our Services",
+      "privacy": "FAQ"
     }
-  ]
-},
-"stats": {
-  "items": [
-    { "value": 20, "suffix": "+", "label": "Years Experience" },
-    { "value": 500, "suffix": "+", "label": "Cases Won" },
-    { "value": 86, "suffix": "%", "label": "Client Satisfaction" },
-    { "value": 24, "suffix": "/7", "label": "Expert Support" }
-  ]
-},
- "corporateIssues": {
+  },
+  "officeHours": {
+    "title": "Office Hours",
+    "days": {
+      "monFri": "Monday - Friday:",
+      "sat": "Saturday:",
+      "sun": "Sunday:"
+    },
+    "time": {
+      "monFri": "9:00 AM - 6:00 PM",
+      "sat": "10:00 AM - 4:00 PM",
+      "sun": "Emergency Only"
+    }
+  },
+  "connect": {
+    "title": "Get in Touch"
+  },
+  "bottom": "© Ali Al Khajeh"
+}
+,
+  "corporateIssues": {
     "hero": {
-      "title": "We Protect Your Investments and Lead Your Cases\nto Victory by the Power of Law",
-      "desc": "At Ali Al Khajeh Law Office, we provide smart litigation strategies to protect corporate assets and resolve commercial disputes with the highest professional standards in the UAE.",
+        "title": "From Incorporation to Litigation — Comprehensive Legal Protection for Your Company in the UAE",
+  "desc": "We establish your company on solid legal foundations through precise drafting, and safeguard your interests with strength and professionalism across all legal disputes and commercial litigation.",
       "cta": "Request a Legal Consultation Now",
       "badges": {
         "licensed": "Licensed & Accredited",
@@ -180,24 +215,32 @@
       }
     },
 
-    "faq": {
-      "title": "Legal Solutions for Your Business Challenges",
-      "subtitle": "Click on a question to view the solution we provide to our clients",
-      "items": {
-        "q1": {
-          "question": "Are you facing difficulties collecting overdue commercial debts?",
-          "answer": "We understand that cash flow is the backbone of any business. Through our smart debt recovery strategies, we have successfully recovered overdue debts exceeding AED 10 million, relying primarily on fast amicable settlements before resorting to litigation."
-        },
-        "q2": {
-          "question": "Are partner disputes threatening your company’s stability?",
-          "answer": "Management disputes can severely impact a business entity. Our priority is protecting the company itself. We have resolved dozens of complex partner disputes through legal restructuring, saving our clients from liquidation losses and ensuring business continuity."
-        },
-        "q3": {
-          "question": "Have you suffered from breach of contracts or supply agreements?",
-          "answer": "Weak contracts lead to significant losses. Our specialized team analyzes contracts and proves damages with precision. We have secured substantial financial compensations for our clients in major construction and supply cases through solid legal case-building."
-        }
+   "faq": {
+    "title": "Legal Solutions for Your Business Challenges",
+    "subtitle": "Click on a question to view the solution we provide to our clients",
+    "items": {
+      "q1": {
+        "question": "How does Ali Al Khajeh Law Firm ensure that commercial contracts are free from legal loopholes?",
+        "answer": "We do not rely on ready-made contract templates. Instead, every contract is \"custom-drafted\" according to the nature of your business and its potential risks. Our team analyzes future dispute scenarios before they arise and includes protective clauses that strengthen your legal position. This significantly reduces the likelihood of litigation and safeguards your investments from any misinterpretation of the law."
+      },
+      "q2": {
+        "question": "In the event of a commercial dispute, how long does it typically take to resolve a case?",
+        "answer": "The duration depends on the complexity of the case, but our strategy is built on \"smart and efficient solutions.\" We first aim for amicable settlement or arbitration to minimize time and costs. If litigation becomes necessary, our deep expertise in UAE court procedures ensures that the case moves forward as quickly as possible, with close follow-up to secure your rights without delay."
+      },
+      "q3": {
+        "question": "Why do I need a full-service law firm from the incorporation stage instead of hiring a lawyer only when a problem occurs?",
+        "answer": "Prevention is always less costly than cure. Starting with us from the incorporation stage ensures that your company’s \"legal structure\" is sound from day one, preventing disputes caused by unclear partnerships or weak contract drafting. If any issue arises, our team will already be fully familiar with your company’s details, making our defense stronger and faster."
+      },
+      "q4": {
+        "question": "How does the firm help in recovering outstanding commercial debts within the UAE?",
+        "answer": "We have a specialized \"debt recovery\" department that follows a progressive legal approach, starting with formal notices and mediation, and escalating to strict judicial enforcement if required. We focus on achieving tangible results, restoring your company’s cash flow, and protecting your commercial reputation while adhering to all applicable legal regulations."
+      },
+      "q5": {
+        "question": "Does the firm regularly update our contracts based on ongoing changes in UAE laws?",
+        "answer": "Yes, this is one of the key advantages of our partnership with clients. The legal environment in the UAE (including company, labor, and tax laws) evolves continuously. We are committed to notifying you of any legal updates affecting your business and to revising your contracts and internal policies to ensure full compliance and avoid fines or administrative penalties."
       }
-    },
+    }
+  },
 
     "consulting": {
       "badge": "Strategic Legal Partners",
@@ -230,7 +273,7 @@
         },
         "submit": "Submit Request",
         "sending": "Sending...",
-           "validation": {
+        "validation": {
           "email": "Please enter a valid email address",
           "phone": "Please enter a valid phone number"
         }
@@ -240,9 +283,9 @@
         "office": "Ali Al Khajeh Law Office for Legal Consultancy",
         "title": "Managing Partner"
       },
-         "cta": {
-        "label": "Free Consultation",
-        "ariaLabel": "Free consultation button"
+      "cta": {
+        "label": " Consultation Now",
+        "ariaLabel": " consultation Now button"
       }
     },
 
@@ -288,26 +331,558 @@
       }
     },
 
-    "process": {
-      "kicker": "How Do We Handle Your Case?",
-      "title": "3 Simple Steps Between You and Securing Your Legal Position",
-      "steps": {
-        "review": {
-          "title": "Initial Assessment",
-          "desc": "We review the case file and documents to determine success probability and potential risks."
-        },
-        "strategy": {
-          "title": "Strategy Development",
-          "desc": "We design an action plan (amicable or litigation-based) aligned with your company’s best interests."
-        },
-        "action": {
-          "title": "Execution & Resolution",
-          "desc": "We take legal action with strong representation before the competent authorities until rights are fully recovered."
-        }
+  "process": {
+    "kicker": "How Do We Secure Your Business Path?",
+    "title": "3 Professional Steps That Ensure Your Company’s Legal Stability and Full Protection",
+    "steps": {
+      "review": {
+        "title": "Strategic Consultation & Analysis",
+        "desc": "We begin with a precise understanding of your business nature or the existing dispute, analyzing documents to identify opportunities and risks, and establishing a clear legal vision."
+      },
+      "strategy": {
+        "title": "Designing Integrated Solutions",
+        "desc": "Whether the objective is company formation, drafting airtight contracts, or developing a dispute resolution plan, we create a tailored strategy that prioritizes your company’s best interests."
+      },
+      "action": {
+        "title": "Execution & Legal Resolution",
+        "desc": "We handle all legal procedures with strong and decisive representation before official authorities and courts, ensuring the achievement of your objectives and the full recovery of your rights."
       }
     }
-
-
   }
+  },
+  "personalStatus": {
+    "hero": {
+ "titleLine1": "",
+  "titleHighlight": "Divorce, Custody, and Khula Cases",
+  "titleLine2": "We guarantee minimal losses with complete confidentiality",
+
+  "desc": "At Ali Al Khajeh Law Firm, we finalize divorce, Khula, and custody procedures in the shortest possible time with the least potential losses. Our deep expertise in the new UAE Personal Status Law is your assured protection for your future and your children’s future.",
+
+  "ctaConsult": "Get a Paid Legal Consultation Now",
+  "ctaCall": "Call Us Directly",
+
+  "trust": {
+    "licensed": "Officially Licensed",
+    "privacy": "Complete Confidentiality",
+    "experience": "20+ Years of Experience"
+  }
+    },
+
+    "mission": {
+      "badge": "Our Mission",
+      "title": "Your rights are protected under the new law.",
+      "desc": "We understand the finest details of the 2024 amendments; for example, addiction is now legally recognized as valid grounds for divorce due to harm. At Ali Al Khajeh Law Office, we leverage our expertise to prove and protect your rights with complete confidentiality, ensuring a fresh start as quickly as possible with minimal losses."
+    },
+
+    "services": {
+      "badge": "Practice Areas",
+      "title": "Our Specialized Legal Services",
+      "viewAll": "View All Services",
+
+      "items": {
+        "divorce": {
+          "title": "Divorce & Khula",
+          "desc": "Precise legal procedures to end marital relationships while preserving the rights of all parties."
+        },
+        "custody": {
+          "title": "Custody & Alimony",
+          "desc": "Securing children's future and ensuring their financial and emotional stability after separation."
+        },
+        "will": {
+          "title": "Wills & Inheritance",
+          "desc": "Drafting wills and distributing estates according to Islamic law and applicable regulations."
+        },
+        "marriage": {
+          "title": "Civil Marriage",
+          "desc": "Specialized consultations for non-Muslims regarding civil marriage procedures and documentation."
+        }
+      }
+    },
+
+    "process": {
+      "badge": "Client Journey",
+      "title": "Simple Steps to Resolve Your Case",
+      "steps": {
+        "step1": {
+          "title": "Request a Consultation",
+          "desc": "Contact us by phone or through the website and book an appointment that suits you to discuss your case details."
+        },
+        "step2": {
+          "title": "Legal Analysis",
+          "desc": "Our team studies your case and provides a clear and well-defined legal strategy."
+        },
+        "step3": {
+          "title": "Execution & Follow-up",
+          "desc": "We begin legal procedures and represent you before the concerned authorities until your rights are fully restored."
+        }
+      }
+    },
+
+    "stats": {
+      "items": {
+        "cases": { "number": "+500", "label": "Successful Cases" },
+        "satisfaction": {
+          "number": "86%",
+          "label": "Client Satisfaction Rate"
+        },
+        "experience": { "number": "+20", "label": "Years of Experience" },
+        "support": { "number": "24/7", "label": "Support & Consultation" }
+      },
+      "authorities": {
+        "courts": "Dubai Courts",
+        "ministry": "Ministry of Justice",
+        "judiciary": "Judicial Department"
+      }
+    },
+
+    "faq": {
+      "title": "Frequently Asked Questions",
+      "subtitle": "Quick answers to your most important legal inquiries",
+      "items": {
+        "q1": {
+          "question": "How long do divorce or khula procedures take in UAE courts?",
+          "answer": "The time frame varies depending on the nature of the case, and whether it will end amicably or through litigation. At Ali Al Khaja Law Firm, we prioritize the “time factor”; we utilize all legal tools and negotiation expertise to ensure that procedures are resolved in the shortest possible timeframe, thus protecting our clients’ interests and minimizing the psychological and financial burdens resulting from prolonged disputes."
+        },
+        "q2": {
+          "question": "Does filing for \"Khula\" affect my rights to child custody or financial support?",
+        "answer": "No, absolutely not. Khula' is about ending the marital relationship in exchange for financial compensation (returning the dowry and alimony), but the children's rights of custody, alimony and housing are established rights by force of law and are not affected by the request for Khula', and we guarantee that these rights will be established for you in the Khula' agreement."
+        },
+        "q3": {
+          "question": "What types of \"harm\" are now recognized by UAE courts as valid grounds for divorce under the recent legal updates?",
+          "answer": "Recent legislative updates in the UAE have expanded recognized forms of harm to protect the affected party. Addiction (in all forms) is now legally recognized as direct grounds for divorce due to harm, in addition to abandonment, psychological or physical abuse, and failure to provide financial support. At Ali Al Khajeh Law Office, we have the expertise to present the legal evidence required to prove such harm under the new standards, ensuring your case is resolved efficiently and that you receive all your legal rights as quickly as possible."
+        },
+        "q4": {
+          "question": "How does the firm ensure confidentiality of my sensitive case information?",
+          "answer": "Confidentiality is our top principle. We apply strict systems in handling documents and information, and our legal team is trained to manage personal status cases with the highest level of discretion and privacy, ensuring that your personal matters remain strictly within the office and court environment."
+        },
+        "q5": {
+          "question": "I am a resident in the UAE — will my home country’s law or UAE law be applied?",
+          "answer": "UAE law is generally the primary law applied, unless one party requests the application of their home country’s law under specific conditions. We specialize in guiding residents to choose the legal path that ensures the best outcome with minimal losses, while also ensuring that the results are legally recognized in their home country."
+        }
+      }
+    },
+    "contact": {
+      "title": "Your rights are a trust… Do not settle for less than you deserve",
+      "desc": "In divorce and khula cases, every decision made today shapes your future. Contact us to ensure the protection of your legal rights and your children’s custody as quickly as possible, with complete confidentiality that respects your privacy.",
+      "call": "Call Now: +971503090203",
+      "whatsapp": "Contact via WhatsApp",
+
+      "form": {
+        "name": "Full Name",
+        "namePlaceholder": "Mohamed Ahmed",
+        "phone": "Phone Number",
+        "phonePlaceholder": "050xxxxxxx",
+        "topic": "Type of Consultation",
+        "submit": "Request a Call Back",
+     "message":"Please briefly describe your consultation topic"
+      }
+    },
+
+    "footer": {
+      "brand": "Ali Al Khajeh",
+      "tagline": "Legal Consultancy & Advocacy",
+      "about": "Your trusted legal partner in the United Arab Emirates. We are committed to the highest standards of integrity and professionalism to protect your interests.",
+
+      "quickLinks": {
+        "title": "Quick Links",
+        "about": "About Us",
+        "practice": "Practice Areas",
+        "team": "Our Team",
+        "blog": "Legal Articles"
+      },
+
+      "services": {
+        "title": "Our Services",
+        "litigation": "Litigation",
+        "contracts": "Contract Drafting",
+        "debts": "Debt Collection",
+        "labor": "Labor Consultations"
+      },
+
+      "contact": {
+        "title": "Contact Us",
+        "address": "Abu Dhabi, Al Jazira Club, Tower (A), 14th Floor"
+      },
+
+      "copyright": "© 2023 Ali Al Khajeh Law Firm. All rights reserved."
+    },
+    "Reviews": {
+      "title": "What Our Clients Say",
+      "items": [
+        {
+          "text": "I had the honor of dealing with Ali Al Khajeh Law Office, and my experience with them was outstanding in every aspect. The team demonstrated high professionalism and complete clarity in explaining legal procedures, giving me a sense of trust and reassurance throughout my case follow-up — which is a very important point. I am grateful to the entire team who communicated with me, and I would especially like to thank Attorney Mohamed Hassan, who showed the utmost professionalism and courtesy. Thanks to his efforts, the case was resolved with a satisfactory settlement. I highly recommend this office to anyone seeking efficiency and credibility in legal matters.",
+          "name": "A UAE Client"
+        },
+        {
+          "text": "Ali Al Khajeh Law Office was the only law firm in Abu Dhabi that agreed to take my case due to its complexity, while most other firms refused to risk it fearing loss. From the beginning, I sensed the competence and expertise of their legal team, especially Mr. Mohamed Farghaly, who demonstrated deep understanding of the law and legal loopholes I was unaware of. Even after winning the case, they continued to follow it closely to ensure I received all my legal rights, particularly Mr. Ibrahim Nageh, who put in extraordinary effort. For this reason, I decided to write this review to recommend them based on my personal experience.",
+          "name": "Sultan Al Qahtani"
+        },
+        {
+          "text": "I would like to thank all the staff at Counselor Ali Al Khajeh’s office, with special appreciation to Counselor Mohamed and Mr. Nidal. My case initially seemed hopeless, but with God’s grace and the team’s efforts, it did not take long to resolve it. Thank God.",
+          "name": "Aisha A."
+        },
+        {
+          "text": "At first, honestly, my case was complicated. I presented it to several lawyers, but unfortunately it was rejected. When I went to Al Khajeh’s office, they accepted it, and I was able to recover all my rights, thank God. Thanks to everyone who stood by me, and to all the staff at Al Khajeh’s office. Special thanks to Mr. Mohamed Farghaly and Mr. Ibrahim — very professional and respectful service.",
+          "name": "Tawfiq Al Hubaishi"
+        },
+        {
+          "text": "Although my case was small and didn’t seem worthy of going to a large office like Ali Al Khajeh’s, I decided to try my luck. When I arrived, I was surprised by the number of staff, clients, and offices, which made me hesitate at first. However, once I entered, the receptionist Hanan welcomed me warmly, treated me excellently, and helped me fill out the form. Within 10 minutes, I met with the legal consultant, who provided the solution in just a minute. I never expected the issue to be resolved so quickly. May God bless your efforts.",
+          "name": "Mena Ibrahim"
+        }
+      ]
+    }
+  },
+  "consultations": {
+  "hero": {
+    "titleLine1": "",
+    "titleHighlight": "Expert Legal Consultation",
+    "titleLine2": "Your Complete Guide to Making the Right Legal Decision",
+
+    "desc": "With over 20 years of legal expertise at Ali Al Khajeh Law Firm, we provide comprehensive legal consultations (commercial, civil, criminal, and personal status) ensuring security, clarity, and the right decision.",
+
+    "ctaConsult": "Book Your Legal Consultation Now",
+    "ctaCall": "Call Us Directly",
+
+    "trust": {
+      "licensed": "Officially Licensed",
+      "privacy": "Over 20 Years of Legal Experience",
+      "experience": "Client Satisfaction Rate Exceeds 86%"
+    }
+  },
+
+  "services": {
+    "title": "Why is legal consultation with an expert firm your first investment in security?",
+    "doc": "In the UAE, the legislative environment is precise and continuously evolving; therefore, obtaining advice from a trusted and professional law firm is not just a procedure — it is a protective shield that prevents costly legal consequences. Choosing Ali Al Khajeh Law Firm guarantees you:",
+
+    "items": {
+      "business": {
+        "title": "A precise analysis of your legal position",
+        "desc": "We don’t provide rigid legal texts; instead, we deeply analyze your situation to uncover opportunities and risks that a non-specialist eye might miss."
+      },
+      "family": {
+        "title": "Proactive protection from legal gaps",
+        "desc": "Our extensive experience in UAE courts allows us to anticipate obstacles before they occur, saving you years of disputes and financial costs."
+      },
+      "insurance": {
+        "title": "Absolute clarity and transparency",
+        "desc": "We believe you have the right to know the full truth; therefore, we provide a realistic and decisive evaluation of your legal chances, helping you make decisions based on solid facts, not promises."
+      },
+      "industrial": {
+        "title": "Tailored solutions, not ready-made templates",
+        "desc": "Every client has a unique case, so we design a legal strategy that perfectly fits your goals, whether you are an individual protecting personal rights or an investor securing your business."
+      }
+    }
+  },
+
+  "process": {
+    "badge": "Client Journey",
+    "title": "Simple Steps to Resolve Your Case",
+    "steps": {
+      "step1": {
+        "title": "Step One",
+        "desc": "Fill in your details, and our team will contact you to schedule an appointment."
+      },
+      "step2": {
+        "title": "Step Two",
+        "desc": "An intensive consultation session to review and analyze your case from all legal aspects."
+      },
+      "step3": {
+        "title": "Step Three",
+        "desc": "Receive a final legal report or guidance outlining your next steps clearly."
+      }
+    }
+  },
+
+  "stats": {
+    "items": {
+      "cases": { "number": "+500", "label": "Successful Cases" },
+      "satisfaction": { "number": "86%", "label": "Client Satisfaction Rate" },
+      "experience": { "number": "+20", "label": "Years of Experience" },
+      "support": { "number": "24/7", "label": "Support & Consultation" }
+    },
+    "authorities": {
+      "courts": "Dubai Courts",
+      "ministry": "Ministry of Justice",
+      "judiciary": "Judicial Department"
+    }
+  },
+
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "subtitle": "Quick answers to your most important legal inquiries",
+    "items": {
+      "q1": {
+        "question": "Can I get legal consultation remotely?",
+        "answer": "Yes, to value your time, we offer legal consultations via online video communication or by phone. We also welcome you to our office for in-person consultations."
+      },
+      "q2": {
+        "question": "What documents are required before the consultation?",
+        "answer": "To provide the most accurate legal opinion, please prepare all contracts, correspondence, or documents related to your matter. Our team will guide you once the appointment is confirmed."
+      },
+      "q3": {
+        "question": "Is the information I share during the consultation confidential?",
+        "answer": "Confidentiality is the cornerstone of our work. Ali Al Khajeh Law Firm adheres to the highest standards of professional confidentiality under UAE legal practice laws."
+      },
+      "q4": {
+        "question": "How long does the consultation session usually take?",
+        "answer": "A consultation session typically lasts 45 to 60 minutes, focusing on analyzing facts, defining the legal position, and providing a clear roadmap."
+      },
+      "q5": {
+        "question": "Does the consultation guarantee the result I hope for?",
+        "answer": "We are committed to professional integrity; therefore, we do not give false promises. Instead, we provide a realistic evaluation of your chances and risks based on experience and judicial precedents."
+      }
+    }
+  },
+
+  "contact": {
+    "title": "Don’t leave your rights to chance… Take a confident legal step today",
+    "desc": "Whether securing your investments or protecting your personal rights, the right legal consultation is the key to security. Contact us now for an accurate and confidential legal evaluation.",
+    "call": "Call Now: +971503090203",
+    "whatsapp": "Contact via WhatsApp",
+
+    "form": {
+      "name": "Full Name",
+      "namePlaceholder": "Mohamed Ahmed",
+      "phone": "Phone Number",
+      "phonePlaceholder": "050xxxxxxx",
+      "topic": "Type of Consultation",
+      "submit": "Request Consultation Now",
+      "message": "Please briefly describe your consultation topic"
+    }
+  },
+
+  "footer": {
+    "brand": "Ali Al Khajeh",
+    "tagline": "Law & Legal Consultations",
+    "about": "Your trusted legal partner in the UAE, committed to the highest standards of integrity and professionalism.",
+
+    "quickLinks": {
+      "title": "Quick Links",
+      "about": "About the Firm",
+      "practice": "Practice Areas",
+      "team": "Our Team",
+      "blog": "Legal Articles"
+    },
+
+    "services": {
+      "title": "Our Services",
+      "litigation": "Litigation",
+      "contracts": "Contract Drafting",
+      "debts": "Debt Collection",
+      "labor": "Labor Consultations"
+    },
+
+    "contact": {
+      "title": "Contact Us",
+      "address": "Abu Dhabi, Al Jazira Club, Tower A, 14th Floor"
+    },
+
+    "copyright": "© 2023 Ali Al Khajeh Law Firm. All Rights Reserved."
+  },
+  "Reviews": {
+  "title": "What Our Clients Say",
+  "items": [
+    {
+      "text": "I highly recommend dealing with this firm for anyone seeking reliable and professional legal consultations and outstanding legal service. The team demonstrates a high level of professionalism and expertise, and we received comprehensive support and precise guidance at every step. Special thanks to Mr. Fadi for his dedication, constant communication, and commitment to achieving the best results. His experience and attention to detail played a major role in making the process smooth and giving us confidence and peace of mind.",
+      "name": "Ghost Media"
+    },
+    {
+      "text": "I would like to express my sincere gratitude and appreciation to Ali Al Khajeh Law Firm for their exceptional efforts in providing legal consultations. The team was always highly professional and supportive throughout the entire case process. I would also like to extend special thanks to Consultant Mahmoud Sabry for his great efforts and clear dedication. He was always available to answer my questions and explain all legal details accurately and clearly, giving me peace of mind and confidence in the progress of my case. His continuous attention and commitment to following every stage of the case reflect outstanding professionalism, which greatly contributed to achieving the desired progress. I strongly recommend him to anyone seeking trusted and distinguished personal status legal consultation.",
+      "name": "A S"
+    },
+    {
+      "text": "I commend your sincere and dedicated efforts in enhancing the level of legal services provided and your effective role. Special mention to Mr. Mohammed Abdul Latif, Mohammed Farghal, and Mohammed Hassan for their remarkable role in creating a positive cooperative environment between them and clients, and for contributing to solutions through legal consultations and awareness services for the public.",
+      "name": "Abdulrahman Altenaiji"
+    },
+    {
+      "text": "Thank you to the firm for providing legal consultations, and special thanks to Ms. Rose for her follow-up in my case and her professional knowledge.",
+      "name": "TAHA AL TURKMANI"
+    },
+    {
+      "text": "I’m not exaggerating. I received a free consultation and even free tea 😊 Note: if you have a serious issue, don’t expect the consultation to be free. I mean simple cases. I felt genuine care, and the best thing about the office is that you feel like you’re in a luxury hotel lobby because of the beautiful atmosphere. Thanks to Ms. Faten, Mr. Nidal, and the wonderful lawyer Mohammed from Egypt. I hope to deal with them again soon because they are truly kind-hearted. Always consult more than one lawyer until you are convinced. Discuss your concerns with your lawyer if you feel something was missed, and don’t judge any firm unfairly. Al Khajeh’s office offers reasonable prices for memos and powers of attorney, and if you’re not satisfied with the price, they will work with you. I haven’t officially dealt with them yet, but I experienced their human side, Arab generosity, and goodwill. Your brother, Fahd Al Ali.",
+      "name": "Fahd Channel"
+    }
+  ]
+},
+"whyChoose": {
+  "kicker": "",
+  "title": "You Can Request Our Legal Consultation in the Following Specializations",
+  "imageAlt": "Smart solutions that save your time and effort",
+
+  "cards": {
+    "confidentiality": {
+      "title": "Commercial Consultations & Business Formation",
+      "desc": "We provide sound legal advice on company formation procedures locally and internationally, drafting and reviewing partnership agreements, and trademark protection to ensure your investments are built on solid legal foundations."
+    },
+    "strategy": {
+      "title": "Personal Status & Inheritance Consultations",
+      "desc": "We offer legal guidance with privacy and professionalism in all family matters, will documentation, and estate distribution in compliance with applicable laws and Sharia regulations."
+    },
+    "results": {
+      "title": "Civil & Real Estate Consultations",
+      "desc": "We analyze sales, purchase, and lease contracts before signing and provide consultation on ownership disputes, construction matters, and compensation cases to protect your real estate assets from legal gaps."
+    },
+    "trademark": {
+      "title": "Criminal & Financial Case Consultations",
+      "desc": "We guide you on the correct legal path in cheque cases, financial claims, and cybercrimes, while preparing proactive defense strategies and restoring your legal standing to protect your position and freedom."
+    }
+  },
+
+  "quote": {
+    "text": "“The best legal service I’ve received — speed, professionalism, and trust.”",
+    "author": "— Client Testimonial"
+  }
+}
+},
+"lawyer": {
+  "hero": {
+    "title": "Ali Al Khajeh Law Firm & Legal Consultancy — Trusted Emirati Legal Expertise",
+    "desc": "A team of elite legal consultants representing you before all courts across the UAE and safeguarding your rights with the highest professional standards.",
+    "cta": "Book Your Legal Consultation Now",
+    "badges": {
+      "licensed": "Licensed & Accredited",
+      "confidential": "Full Confidentiality",
+      "fast": "Rapid Response"
+    }
+  },
+  "faq": {
+    "title": "Legal Solutions for Your Business Challenges",
+    "subtitle": "Click on a question to view the solution we provide to our clients",
+    "items": {
+      "q1": {
+        "question": "Does the firm represent clients across all Emirates?",
+        "answer": "Yes, our firm represents clients before all federal and local courts at all levels (First Instance, Appeal, Cassation) across the UAE to ensure full access to justice."
+      },
+      "q2": {
+        "question": "How can I book and receive a legal consultation?",
+        "answer": "You may book your consultation through our website or by direct contact. We offer in-office consultations as well as remote legal consultations for your convenience and faster response."
+      },
+      "q3": {
+        "question": "What legal specializations does your team cover?",
+        "answer": "Our firm includes specialists across all branches of law, including family matters, commercial disputes, criminal cases, and real estate, delivering comprehensive and precise legal solutions."
+      },
+      "q4": {
+        "question": "Are your legal services limited to a specific category of clients?",
+        "answer": "Our services are available to all citizens, residents, and companies in the UAE. We are committed to providing legal advice and representation in compliance with all local regulations and legislation."
+      },
+      "q5": {
+        "question": "What distinguishes Ali Al Khajeh Law Firm from other law firms?",
+        "answer": "We are distinguished by our extensive experience within the local judiciary, absolute transparency with our clients, and our commitment to developing innovative legal strategies that ensure the best results and protect our clients’ interests."
+      }
+    }
+  },
+  "consulting": {
+    "badge": "Strategic Legal Partners",
+    "heading": "Place Your Case in Trusted Hands — Contact Us Today",
+    "desc": "With over two decades of experience in the UAE judiciary, we provide a team of expert consultants delivering precise legal solutions to protect your rights and business interests at the highest standards of professionalism.",
+    "form": {
+      "title": "Legal Consultation",
+      "status": {
+        "validation": "Please complete all required fields.",
+        "success": "Your request has been submitted successfully. We will contact you shortly.",
+        "error": "An unexpected error occurred. Please try again."
+      },
+      "firstName": {
+        "label": "First Name"
+      },
+      "lastName": {
+        "label": "Last Name"
+      },
+      "email": {
+        "label": "Email Address",
+        "placeholder": "example@company.com"
+      },
+      "phone": {
+        "label": "Phone Number",
+        "placeholder": "Enter your phone number"
+      },
+      "message": {
+        "label": "Consultation Details",
+        "placeholder": "Describe the legal challenge your company is facing, and our team will review it."
+      },
+      "submit": "Submit Request",
+      "sending": "Sending...",
+      "validation": {
+        "email": "Please enter a valid email address",
+        "phone": "Please enter a valid phone number"
+      }
+    },
+    "signature": {
+      "name": "Ali Al Khajeh Law Firm",
+      "office": "Ali Al Khajeh Law Firm & Legal Consultancy",
+      "title": "Managing Partner"
+    },
+    "cta": {
+      "label": "Request Consultation",
+      "ariaLabel": "Consultation request button"
+    }
+  },
+  "whyChoose": {
+    "kicker": "",
+    "title": "Our Services",
+    "imageAlt": "Corporate legal services and commercial dispute representation",
+    "cards": {
+      "confidentiality": {
+        "title": "Family Law Cases",
+        "desc": "We provide comprehensive legal representation in divorce, alimony, custody, and inheritance matters, ensuring full confidentiality and protection of your family rights in accordance with Sharia and UAE law."
+      },
+      "strategy": {
+        "title": "Corporate Services",
+        "desc": "We offer comprehensive legal solutions for company formation, contract drafting, and representation in investment disputes to safeguard your business interests and ensure sustainable growth."
+      },
+      "results": {
+        "title": "Criminal Cases",
+        "desc": "We defend clients in all criminal and misdemeanor cases, from investigation stages to court representation, ensuring full justice and protection of personal freedoms."
+      },
+      "results2": {
+        "title": "Real Estate Cases",
+        "desc": "We specialize in resolving real estate disputes related to tenancy, ownership, and development, providing legal counsel to secure your investments and effectively resolve property conflicts."
+      }
+    }
+  },
+  "services": {
+    "title": "Why Business Owners Choose Us",
+    "items": {
+      "business": {
+        "title": "Deep Local Expertise",
+        "desc": "In-depth understanding of UAE laws and local court procedures, ensuring proper handling of commercial cases."
+      },
+      "family": {
+        "title": "Strategic Solutions",
+        "desc": "We resort to litigation only when it is the most efficient and beneficial solution for our clients, focusing on smart legal strategies."
+      },
+      "insurance": {
+        "title": "Absolute Confidentiality",
+        "desc": "We prioritize protecting your company’s secrets and commercial reputation with full commitment to the highest standards of professional confidentiality."
+      }
+    }
+  },
+  "process": {
+    "kicker": "How We Secure Your Business Path",
+    "title": "3 Professional Steps Ensuring Legal Stability and Full Protection for Your Company",
+    "steps": {
+      "review": {
+        "title": "Consultation & Strategic Analysis",
+        "desc": "We begin with a precise understanding of your business activity or dispute and analyze documents to identify opportunities, risks, and establish a clear legal vision."
+      },
+      "strategy": {
+        "title": "Designing Integrated Legal Solutions",
+        "desc": "Whether your goal is company formation, drafting loophole-free contracts, or planning dispute resolution, we create a tailored strategy that prioritizes your company’s interests."
+      },
+      "action": {
+        "title": "Execution & Legal Resolution",
+        "desc": "We handle all legal procedures with strong representation before official authorities and courts, ensuring your objectives are achieved and your rights fully restored."
+      }
+    }
+  }
+},
+"about": {
+  "link": "",
+  "subHeader": "Ali Al Khajeh — Founder",
+  "header": "Who is Ali Al Khajeh? And Why is He Among the Best in the UAE?",
+  "paragraph": "Ali Al Khajeh Law Firm was established in 2016 by Ali Al Khajeh, a lawyer, legal consultant, private notary public, and certified contract authenticator. He began his professional journey immediately after graduating from the Dubai Police Academy and has received numerous honors and recognitions, including a Certificate of Appreciation from the Abu Dhabi Chamber of Commerce in 2018, recognition from the Abu Dhabi Judicial Department in 2019, and his firm ranking fourth among the Top 100 Law Firms under the Nafis Initiative at the Commercial Partial Cases Performance Conference held in Dubai in 2022.",
+  "button": "Request Consultation"
+}
+
 
 }

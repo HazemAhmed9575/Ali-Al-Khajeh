@@ -99,7 +99,7 @@ export default function FreeConsultingSection({ messages }) {
           <div className="offset-border relative">
             <div className="bg-white rounded-lg p-10 shadow-2xl relative z-10 border border-black/5">
               <h3 className="font-display text-2xl font-bold text-[#151513] mb-8 border-l-4 border-primary pl-4">
-                {t(messages, "corporateIssues.consulting.form.title")}
+                {t(messages, "lawyer.consulting.form.title")}
               </h3>
 
               {status && status !== "error" && (
@@ -111,7 +111,7 @@ export default function FreeConsultingSection({ messages }) {
                   }`}>
                   {t(
                     messages,
-                    `corporateIssues.consulting.form.status.${status}`,
+                    `lawyer.consulting.form.status.${status}`,
                   )}
                 </div>
               )}
@@ -128,7 +128,7 @@ export default function FreeConsultingSection({ messages }) {
                   <label className="text-[#7b786f] text-xs font-bold uppercase tracking-widest mb-1">
                     {t(
                       messages,
-                      "corporateIssues.consulting.form.firstName.label",
+                      "lawyer.consulting.form.firstName.label",
                     )}
                   </label>
                   <input
@@ -144,7 +144,7 @@ export default function FreeConsultingSection({ messages }) {
                   <label className="text-[#7b786f] text-xs font-bold uppercase tracking-widest mb-1">
                     {t(
                       messages,
-                      "corporateIssues.consulting.form.lastName.label",
+                      "lawyer.consulting.form.lastName.label",
                     )}
                   </label>
                   <input
@@ -158,7 +158,7 @@ export default function FreeConsultingSection({ messages }) {
                 {/* EMAIL */}
                 <div className="flex flex-col">
                   <label className="text-[#7b786f] text-xs font-bold uppercase tracking-widest mb-1">
-                    {t(messages, "corporateIssues.consulting.form.email.label")}
+                    {t(messages, "lawyer.consulting.form.email.label")}
                   </label>
 
                   <input
@@ -174,7 +174,7 @@ export default function FreeConsultingSection({ messages }) {
                     <span className="mt-1 text-xs text-red-500">
                       {t(
                         messages,
-                        "corporateIssues.consulting.form.validation.email",
+                        "lawyer.consulting.form.validation.email",
                       )}
                     </span>
                   )}
@@ -183,7 +183,7 @@ export default function FreeConsultingSection({ messages }) {
                 {/* PHONE */}
                 <div className="flex flex-col">
                   <label className="text-[#7b786f] text-xs font-bold uppercase tracking-widest mb-1">
-                    {t(messages, "corporateIssues.consulting.form.phone.label")}
+                    {t(messages, "lawyer.consulting.form.phone.label")}
                   </label>
 
                   <div className="relative">
@@ -229,7 +229,7 @@ export default function FreeConsultingSection({ messages }) {
                     <span className="mt-1 text-xs text-red-500">
                       {t(
                         messages,
-                        "corporateIssues.consulting.form.validation.phone",
+                        "lawyer.consulting.form.validation.phone",
                       )}
                     </span>
                   )}
@@ -240,7 +240,7 @@ export default function FreeConsultingSection({ messages }) {
                   <label className="text-[#7b786f] text-xs font-bold uppercase tracking-widest mb-1">
                     {t(
                       messages,
-                      "corporateIssues.consulting.form.message.label",
+                      "lawyer.consulting.form.message.label",
                     )}
                   </label>
                   <textarea
@@ -263,8 +263,8 @@ export default function FreeConsultingSection({ messages }) {
     }
   `}>
                   {loading
-                    ? t(messages, "corporateIssues.consulting.form.sending")
-                    : t(messages, "corporateIssues.consulting.form.submit")}
+                    ? t(messages, "lawyer.consulting.form.sending")
+                    : t(messages, "lawyer.consulting.form.submit")}
                 </button>
               </form>
             </div>
@@ -273,29 +273,29 @@ export default function FreeConsultingSection({ messages }) {
         <div className="lg:col-span-7 space-y-8 lg:pl-10 hidden md:block">
           <div className="space-y-6">
             <span className="text-primary font-bold uppercase tracking-[0.2em] text-sm">
-              {t(messages, "corporateIssues.consulting.badge")}
+              {t(messages, "lawyer.consulting.badge")}
             </span>
 
             <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-[#151513]">
-              {t(messages, "corporateIssues.consulting.heading")}
+              {t(messages, "lawyer.consulting.heading")}
             </h1>
 
             <p className="text-lg text-[#7b786f] leading-relaxed max-w-xl">
-              {t(messages, "corporateIssues.consulting.desc")}
+              {t(messages, "lawyer.consulting.desc")}
             </p>
           </div>
 
           <div className="flex items-center gap-10 pt-6">
             <div className="space-y-2">
               <p className="font-signature text-4xl text-[#151513]">
-                {t(messages, "corporateIssues.consulting.signature.name")}
+                {t(messages, "lawyer.consulting.signature.name")}
               </p>
               <div className="flex flex-col">
                 <span className="font-bold text-sm text-[#151513]">
-                  {t(messages, "corporateIssues.consulting.signature.office")}
+                  {t(messages, "lawyer.consulting.signature.office")}
                 </span>
                 <span className="text-xs text-primary font-bold uppercase tracking-widest">
-                  {t(messages, "corporateIssues.consulting.signature.title")}
+                  {t(messages, "lawyer.consulting.signature.title")}
                 </span>
               </div>
             </div>

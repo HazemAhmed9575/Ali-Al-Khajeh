@@ -21,14 +21,14 @@ export default function Navbar({ messages, locale }) {
 
   const sections = [
     { id: "home", label: t(messages, "nav.home") },
-    { id: "faq", label: t(messages, "nav.faq") },
-    { id: "consultation", label: t(messages, "nav.contact") },
-    { id: "why-us", label: t(messages, "nav.why") },
-    { id: "services", label: t(messages, "nav.services") },
+      { id: "reviews", label: t(messages, "nav.reviews") },
+    { id: "contact", label: t(messages, "nav.contact") },
     { id: "steps", label: t(messages, "nav.steps") },
+    { id: "faq", label: t(messages, "nav.faq") },
+
   ];
 
-  const [activeSection, setActiveSection] = useState("");
+  const [activeSection, setActiveSection] = useState("steps");
 
   // ✅ NEW: sticky only after scroll
   const [stuck, setStuck] = useState(false);
@@ -232,7 +232,7 @@ export default function Navbar({ messages, locale }) {
       </div>
 
       {/* ✅ NAVBAR: normal at top, sticky AFTER scroll */}
-  <div className="h-16 md:h-18">
+      <div className="h-16 md:h-18">
 
      <header
   className={`

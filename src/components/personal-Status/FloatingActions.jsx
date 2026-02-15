@@ -17,7 +17,7 @@ export default function FloatingActions({
   const telLink = `tel:${phone}`;
 
   const scrollToConsultation = () => {
-    const section = document.getElementById("consultation");
+    const section = document.getElementById("contact");
     if (!section) return;
 
     section.scrollIntoView({
