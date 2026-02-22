@@ -1,11 +1,12 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { t } from "@/i18n/t";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
 import { isValidPhoneNumber } from "libphonenumber-js";
-
+const SHEET_WEBAPP_URL =
+  "https://script.google.com/macros/s/AKfycbyDzgU6LjVOtj523vtPyOktiVFIIGW-Xtd50f2kpopz95Zmcop_4gGTikFd-Wti-tJWIg/exec";
 export default function FreeConsultingSection({ messages }) {
   const [loading, setLoading] = useState(false);
   const [status, setStatus] = useState(null); // null | validation | success | error
@@ -40,55 +41,79 @@ export default function FreeConsultingSection({ messages }) {
       isPhoneValid
     );
   }
+useEffect(() => {
+  const params = new URLSearchParams(window.location.search);
+  const gclid = params.get("gclid");
+  if (gclid) localStorage.setItem("gclid", gclid);
+}, []);
+async function onSubmit(e) {
+  e.preventDefault();
+  if (loading) return;
 
-  async function onSubmit(e) {
-    e.preventDefault();
-    if (loading) return;
+  const form = new FormData(e.currentTarget);
 
-    const form = new FormData(e.currentTarget);
+  const firstName = String(form.get("firstName") || "").trim();
+  const lastName = String(form.get("lastName") || "").trim();
+  const email = String(form.get("email") || "").trim();
+  const message = String(form.get("message") || "").trim();
+  const cleanPhone = phone.replace(/\D/g, "");
 
-    const firstName = String(form.get("firstName") || "").trim();
-    const lastName = String(form.get("lastName") || "").trim();
-    const email = String(form.get("email") || "").trim();
-    const message = String(form.get("message") || "").trim();
-    const cleanPhone = phone.replace(/\D/g, "");
-
-    // validation بسيط
-    if (!firstName || !lastName || !email || !cleanPhone || !message) {
-      setStatus("validation");
-      return;
-    }
-
-    setLoading(true);
-    setStatus(null);
-
-    try {
-      // 🔥 ابعت وخلاص
-      await fetch("/api/contact-us", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          data: {
-            firstName,
-            lastName,
-            mail: email,
-            phone: cleanPhone,
-            message,
-          },
-        }),
-      });
-
-      // ✅ دايمًا Success طالما وصل هنا
-      setStatus("success");
-      e.currentTarget.reset();
-      setPhone("");
-    } catch {
-      // ❌ حتى لو حصل error – اعتبره success
-      setStatus("success");
-    } finally {
-      setLoading(false);
-    }
+  if (!firstName || !lastName || !email || !cleanPhone || !message) {
+    setStatus("validation");
+    return;
   }
+
+  setLoading(true);
+  setStatus(null);
+
+  try {
+    // ================= EMAIL =================
+    await fetch("/api/contact-us", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        data: {
+          firstName,
+          lastName,
+          mail: email,
+          phone: cleanPhone,
+          message,
+        },
+      }),
+    });
+
+    // ================= SHEET =================
+    const gclid = localStorage.getItem("gclid") || "";
+
+    const sheetForm = new FormData();
+    sheetForm.append("google_id", gclid || "no_gclid");
+    sheetForm.append("conversion_name", "Contact Lead");
+    sheetForm.append("conversion_time", new Date().toISOString());
+    sheetForm.append("conversion_value", 1);
+    sheetForm.append("conversion_currency", "USD");
+    sheetForm.append("name", `${firstName} ${lastName}`);
+    sheetForm.append("number", cleanPhone);
+    sheetForm.append("email", email);
+    sheetForm.append("message", message);
+
+    await fetch(SHEET_WEBAPP_URL, {
+      method: "POST",
+      body: sheetForm,
+      mode: "no-cors",
+    });
+
+    // ================= DONE =================
+    setStatus("success");
+    e.currentTarget.reset();
+    setPhone("");
+
+  } catch (err) {
+    console.log(err);
+    setStatus("success"); // حتى لو الشيت فشل ما توقفش اليوزر
+  } finally {
+    setLoading(false);
+  }
+}
 
   return (
     <main

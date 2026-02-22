@@ -1,64 +1,94 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { t } from "@/i18n/t";
 import { FiPhoneCall } from "react-icons/fi";
 import { FaWhatsapp } from "react-icons/fa";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
 import { isValidPhoneNumber } from "libphonenumber-js";
-
+const SHEET_WEBAPP_URL =
+  "https://script.google.com/macros/s/AKfycbyDzgU6LjVOtj523vtPyOktiVFIIGW-Xtd50f2kpopz95Zmcop_4gGTikFd-Wti-tJWIg/exec";
 export default function ContactSection({ messages, locale }) {
   const [loading, setLoading] = useState(false);
   const [status, setStatus] = useState(null);
   const [phone, setPhone] = useState("");
   const [errors, setErrors] = useState({ phone: false });
+useEffect(() => {
+  const params = new URLSearchParams(window.location.search);
+  const gclid = params.get("gclid");
+  if (gclid) localStorage.setItem("gclid", gclid);
+}, []);
+async function onSubmit(e) {
+  e.preventDefault();
+  if (loading) return;
 
-  async function onSubmit(e) {
-    e.preventDefault();
-    if (loading) return;
+  const form = new FormData(e.currentTarget);
+  const name = String(form.get("name") || "").trim();
+  const message = String(form.get("message") || "").trim();
+  const cleanPhone = phone.replace(/\D/g, "");
 
-    const form = new FormData(e.currentTarget);
-    const name = String(form.get("name") || "").trim();
- const message = String(form.get("message") || "").trim();
-    const cleanPhone = phone.replace(/\D/g, "");
+  const validPhone =
+    cleanPhone.length > 0 && isValidPhoneNumber("+" + cleanPhone);
 
-    const validPhone =
-      cleanPhone.length > 0 && isValidPhoneNumber("+" + cleanPhone);
-
-   if (!name || message === "" || !validPhone){
-      setErrors({ phone: !validPhone });
-      setStatus("validation");
-      return;
-    }
-
-    setLoading(true);
-    setStatus(null);
-
-    try {
-      await fetch("/api/contact-us", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          data: {
-            firstName: name,
-            lastName: "-",
-            mail: "no@email.com",
-            phone: cleanPhone,
-          message,
-          },
-        }),
-      });
-
-      setStatus("success");
-      e.currentTarget.reset();
-      setPhone("");
-    } catch {
-      setStatus("success");
-    } finally {
-      setLoading(false);
-    }
+  if (!name || message === "" || !validPhone) {
+    setErrors({ phone: !validPhone });
+    setStatus("validation");
+    return;
   }
+
+  setLoading(true);
+  setStatus(null);
+
+  try {
+
+    // ================= EMAIL =================
+    await fetch("/api/contact-us", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        data: {
+          firstName: name,
+          lastName: "-",
+          mail: "no@email.com",
+          phone: cleanPhone,
+          message,
+        },
+      }),
+    });
+
+    // ================= GOOGLE SHEET =================
+    const gclid = localStorage.getItem("gclid") || "";
+
+    const sheetForm = new FormData();
+    sheetForm.append("google_id", gclid || "no_gclid");
+    sheetForm.append("conversion_name", "Contact Lead");
+    sheetForm.append("conversion_time", new Date().toISOString());
+    sheetForm.append("conversion_value", 1);
+    sheetForm.append("conversion_currency", "USD");
+    sheetForm.append("name", name);
+    sheetForm.append("number", cleanPhone);
+    sheetForm.append("email", "no@email.com");
+    sheetForm.append("message", message);
+
+    await fetch(SHEET_WEBAPP_URL, {
+      method: "POST",
+      body: sheetForm,
+      mode: "no-cors",
+    });
+
+    // ================= DONE =================
+    setStatus("success");
+    e.currentTarget.reset();
+    setPhone("");
+
+  } catch (err) {
+    console.log("SHEET ERROR:", err);
+    setStatus("success"); // ما توقفش اليوزر
+  } finally {
+    setLoading(false);
+  }
+}
 
   return (
     <section className="py-20 bg-[#FDFBF7] relative" id="contact">
