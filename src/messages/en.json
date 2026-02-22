@@ -467,15 +467,26 @@
       "call": "Call Now: +971503090203",
       "whatsapp": "Contact via WhatsApp",
 
-      "form": {
-        "name": "Full Name",
-        "namePlaceholder": "Mohamed Ahmed",
-        "phone": "Phone Number",
-        "phonePlaceholder": "050xxxxxxx",
-        "topic": "Type of Consultation",
-        "submit": "Request a Call Back",
-     "message":"Please briefly describe your consultation topic"
+       "form": {
+      "name": "Name",
+      "email": "Email",
+      "emirate": "Emirate",
+      "case": "Describe your case",
+      "send": "Send",
+      "sending": "Sending...",
+      "success": "Request sent successfully",
+      "validation": "Please fill all fields correctly",
+      "error": "Something went wrong. Please try again.",
+      "invalidPhone": "Invalid phone number",
+      "invalidEmail": "Invalid email",
+      "emirates": {
+        "dubai": "Dubai",
+        "abudhabi": "Abu Dhabi",
+        "sharjah": "Sharjah",
+        "ajman": "Ajman",
+        "rak": "Ras Al Khaimah"
       }
+    }
     },
 
     "footer": {

@@ -1,0 +1,10 @@
+export default async function CorporateIssuesLayout({ children, params }) {
+  const { locale } = await params;
+  const dir = locale === "ar" ? "rtl" : "ltr";
+
+  return (
+    <section dir={dir} lang={locale} className="min-h-screen">
+      {children}
+    </section>
+  );
+}

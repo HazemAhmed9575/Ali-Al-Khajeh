@@ -21,14 +21,14 @@ export default function Navbar({ messages, locale }) {
 
   const sections = [
     { id: "home", label: t(messages, "nav.home") },
-    { id: "faq", label: t(messages, "nav.faq") },
-    { id: "consultation", label: t(messages, "nav.contact") },
-    { id: "why-us", label: t(messages, "nav.why") },
-    { id: "services", label: t(messages, "nav.services") },
+    { id: "contact", label: t(messages, "nav.contact") },
+    { id: "Ourmessage", label: t(messages, "nav.Ourmessage") },
     { id: "steps", label: t(messages, "nav.steps") },
+    { id: "faq", label: t(messages, "nav.faq") },
+
   ];
 
-  const [activeSection, setActiveSection] = useState("");
+  const [activeSection, setActiveSection] = useState("steps");
 
   // ✅ NEW: sticky only after scroll
   const [stuck, setStuck] = useState(false);
@@ -136,10 +136,10 @@ export default function Navbar({ messages, locale }) {
   return (
     <>
       {/* ✅ TOP BAR (NOT FIXED - scrolls away) */}
-      <div className="bg-[#85754E]">
+      {/* <div className="bg-[#85754E]">
         <div className="container mx-auto px-4">
           <div className="h-12 flex items-center justify-between">
-            {/* Social icons */}
+         
             <div className="flex gap-2">
               <a
                 href="https://www.linkedin.com/company/alialkhajehae/"
@@ -197,66 +197,42 @@ export default function Navbar({ messages, locale }) {
               </a>
             </div>
 
-            {/* Whats + Call + Language */}
-              <div className="flex items-center gap-2">
-              {/* WhatsApp */}
+         
+            <div className="flex items-center gap-2">
+           
               <a
                 href="https://wa.me/971503090203"
                 onClick={(e) =>
                   trackAndOpen(e, "https://wa.me/971503090203", "whatsapp")
                 }
-                className="size-9 rounded-full bg-white/20 flex items-center justify-center
+                className="size-11 rounded-full bg-green-400 flex items-center justify-center
                text-white hover:bg-white/30 transition-all duration-300"
                 aria-label="WhatsApp"
               >
                 <span className="sr-only">WhatsApp</span>
-                <FaWhatsapp className="text-[16px] pointer-events-none" />
+                <FaWhatsapp className="text-[25px] pointer-events-none" />
               </a>
+
+             
               <a
                 href="tel:+971503090203"
                 onClick={(e) =>
                   trackAndOpen(e, "tel:+971503090203", "call")
                 }
-                className="size-9 rounded-full bg-white/20 flex items-center justify-center
+                className="size-11 rounded-full bg-white/20 flex items-center justify-center
                text-white hover:bg-white/30 transition-all duration-300"
                 aria-label="Call"
               >
                 <span className="sr-only">Call</span>
-                <FaPhoneAlt className="text-[15px] pointer-events-none" />
-              </a>
-              <a
-                href="https://wa.me/971547477777"
-                onClick={(e) =>
-                  trackAndOpen(e, "https://wa.me/971547477777", "whatsapp")
-                }
-                className="size-9 rounded-full bg-white/20 flex items-center justify-center
-               text-white hover:bg-white/30 transition-all duration-300"
-                aria-label="WhatsApp"
-              >
-                <span className="sr-only">WhatsApp</span>
-                <FaWhatsapp className="text-[16px] pointer-events-none" />
-              </a>
-
-              {/* Call */}
-              <a
-                href="tel:+971547477777"
-                onClick={(e) =>
-                  trackAndOpen(e, "tel:+971547477777", "call")
-                }
-                className="size-9 rounded-full bg-white/20 flex items-center justify-center
-               text-white hover:bg-white/30 transition-all duration-300"
-                aria-label="Call"
-              >
-                <span className="sr-only">Call</span>
-                <FaPhoneAlt className="text-[15px] pointer-events-none" />
+                <FaPhoneAlt className="text-[18px] pointer-events-none" />
               </a>
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
 
       {/* ✅ NAVBAR: normal at top, sticky AFTER scroll */}
-  <div className="h-16 md:h-18">
+      <div className="h-16 md:h-18">
 
      <header
   className={`

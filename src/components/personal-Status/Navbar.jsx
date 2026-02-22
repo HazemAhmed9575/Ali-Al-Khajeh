@@ -205,26 +205,50 @@ export default function Navbar({ messages, locale }) {
                 onClick={(e) =>
                   trackAndOpen(e, "https://wa.me/971503090203", "whatsapp")
                 }
-                className="size-11 rounded-full bg-green-400 flex items-center justify-center
+                className="size-9 rounded-full bg-white/20 flex items-center justify-center
                text-white hover:bg-white/30 transition-all duration-300"
                 aria-label="WhatsApp"
               >
                 <span className="sr-only">WhatsApp</span>
-                <FaWhatsapp className="text-[25px] pointer-events-none" />
+                <FaWhatsapp className="text-[16px] pointer-events-none" />
               </a>
-
-              {/* Call */}
               <a
                 href="tel:+971503090203"
                 onClick={(e) =>
                   trackAndOpen(e, "tel:+971503090203", "call")
                 }
-                className="size-11 rounded-full bg-white/20 flex items-center justify-center
+                className="size-9 rounded-full bg-white/20 flex items-center justify-center
                text-white hover:bg-white/30 transition-all duration-300"
                 aria-label="Call"
               >
                 <span className="sr-only">Call</span>
-                <FaPhoneAlt className="text-[18px] pointer-events-none" />
+                <FaPhoneAlt className="text-[15px] pointer-events-none" />
+              </a>
+              <a
+                href="https://wa.me/971547477777"
+                onClick={(e) =>
+                  trackAndOpen(e, "https://wa.me/971547477777", "whatsapp")
+                }
+                className="size-9 rounded-full bg-white/20 flex items-center justify-center
+               text-white hover:bg-white/30 transition-all duration-300"
+                aria-label="WhatsApp"
+              >
+                <span className="sr-only">WhatsApp</span>
+                <FaWhatsapp className="text-[16px] pointer-events-none" />
+              </a>
+
+              {/* Call */}
+              <a
+                href="tel:+971547477777"
+                onClick={(e) =>
+                  trackAndOpen(e, "tel:+971547477777", "call")
+                }
+                className="size-9 rounded-full bg-white/20 flex items-center justify-center
+               text-white hover:bg-white/30 transition-all duration-300"
+                aria-label="Call"
+              >
+                <span className="sr-only">Call</span>
+                <FaPhoneAlt className="text-[15px] pointer-events-none" />
               </a>
             </div>
           </div>

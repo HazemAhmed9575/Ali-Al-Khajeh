@@ -198,7 +198,7 @@ export default function Navbar({ messages, locale }) {
             </div>
 
             {/* Whats + Call + Language */}
-            <div className="flex items-center gap-2">
+             <div className="flex items-center gap-2">
               {/* WhatsApp */}
               <a
                 href="https://wa.me/971503090203"
@@ -212,12 +212,36 @@ export default function Navbar({ messages, locale }) {
                 <span className="sr-only">WhatsApp</span>
                 <FaWhatsapp className="text-[16px] pointer-events-none" />
               </a>
-
-              {/* Call */}
               <a
                 href="tel:+971503090203"
                 onClick={(e) =>
                   trackAndOpen(e, "tel:+971503090203", "call")
+                }
+                className="size-9 rounded-full bg-white/20 flex items-center justify-center
+               text-white hover:bg-white/30 transition-all duration-300"
+                aria-label="Call"
+              >
+                <span className="sr-only">Call</span>
+                <FaPhoneAlt className="text-[15px] pointer-events-none" />
+              </a>
+              <a
+                href="https://wa.me/971547477777"
+                onClick={(e) =>
+                  trackAndOpen(e, "https://wa.me/971547477777", "whatsapp")
+                }
+                className="size-9 rounded-full bg-white/20 flex items-center justify-center
+               text-white hover:bg-white/30 transition-all duration-300"
+                aria-label="WhatsApp"
+              >
+                <span className="sr-only">WhatsApp</span>
+                <FaWhatsapp className="text-[16px] pointer-events-none" />
+              </a>
+
+              {/* Call */}
+              <a
+                href="tel:+971547477777"
+                onClick={(e) =>
+                  trackAndOpen(e, "tel:+971547477777", "call")
                 }
                 className="size-9 rounded-full bg-white/20 flex items-center justify-center
                text-white hover:bg-white/30 transition-all duration-300"

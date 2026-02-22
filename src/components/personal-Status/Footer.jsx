@@ -87,6 +87,10 @@ export default function Footer({ messages, locale }) {
                 <span dir="ltr">+971 50 309 0203</span>
               </li>
               <li className="flex items-center gap-3">
+                <FiPhone className="text-[#85754E] text-lg" />
+                <span dir="ltr">+971 54 747 7777</span>
+              </li>
+              <li className="flex items-center gap-3">
                 <FiMail className="text-[#85754E] text-lg" />
                 <span>ali@alialkhajeh.ae</span>
               </li>
