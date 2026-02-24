@@ -103,12 +103,12 @@ export default async function Page({ params }) {
       <StatsSection messages={messages} locale={locale} />
       <FAQSection messages={messages} locale={locale} />
       <Footer messages={messages} locale={locale} />
-      {/* <FloatingActions
-        phone="+971503090203"
-        whatsapp="971503090203"
+      <FloatingActions
+        phone="+971547477777"
+        whatsapp="971547477777"
         messages={messages}
         locale={locale}
-      /> */}
+      />
     </>
   );
 }

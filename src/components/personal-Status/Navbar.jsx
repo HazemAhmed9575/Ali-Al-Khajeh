@@ -12,13 +12,13 @@ import {
   FaWhatsapp,
 } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export default function Navbar({ messages, locale }) {
   const router = useRouter();
   const pathname = usePathname();
   const isRTL = locale === "ar";
-
+const [openMenu, setOpenMenu] = useState(null); // "wa" | "call" | null
   const sections = [
     { id: "home", label: t(messages, "nav.home") },
     { id: "Ourmessage", label: t(messages, "nav.Ourmessage") },
@@ -132,7 +132,19 @@ export default function Navbar({ messages, locale }) {
       }
     }, 150);
   };
+const menuRef = useRef();
+useEffect(() => {
+  const handleClickOutside = (event) => {
+    if (menuRef.current && !menuRef.current.contains(event.target)) {
+      setOpenMenu(null);
+    }
+  };
 
+  document.addEventListener("mousedown", handleClickOutside);
+  return () => {
+    document.removeEventListener("mousedown", handleClickOutside);
+  };
+}, []);
   return (
     <>
       {/* ✅ TOP BAR (NOT FIXED - scrolls away) */}
@@ -198,59 +210,86 @@ export default function Navbar({ messages, locale }) {
             </div>
 
             {/* Whats + Call + Language */}
-            <div className="flex items-center gap-2">
-              {/* WhatsApp */}
-              <a
-                href="https://wa.me/971503090203"
-                onClick={(e) =>
-                  trackAndOpen(e, "https://wa.me/971503090203", "whatsapp")
-                }
-                className="size-9 rounded-full bg-white/20 flex items-center justify-center
-               text-white hover:bg-white/30 transition-all duration-300"
-                aria-label="WhatsApp"
-              >
-                <span className="sr-only">WhatsApp</span>
-                <FaWhatsapp className="text-[16px] pointer-events-none" />
-              </a>
-              <a
-                href="tel:+971503090203"
-                onClick={(e) =>
-                  trackAndOpen(e, "tel:+971503090203", "call")
-                }
-                className="size-9 rounded-full bg-white/20 flex items-center justify-center
-               text-white hover:bg-white/30 transition-all duration-300"
-                aria-label="Call"
-              >
-                <span className="sr-only">Call</span>
-                <FaPhoneAlt className="text-[15px] pointer-events-none" />
-              </a>
-              <a
-                href="https://wa.me/971547477777"
-                onClick={(e) =>
-                  trackAndOpen(e, "https://wa.me/971547477777", "whatsapp")
-                }
-                className="size-9 rounded-full bg-white/20 flex items-center justify-center
-               text-white hover:bg-white/30 transition-all duration-300"
-                aria-label="WhatsApp"
-              >
-                <span className="sr-only">WhatsApp</span>
-                <FaWhatsapp className="text-[16px] pointer-events-none" />
-              </a>
+<div className="flex items-center gap-2 relative z-40">
 
-              {/* Call */}
-              <a
-                href="tel:+971547477777"
-                onClick={(e) =>
-                  trackAndOpen(e, "tel:+971547477777", "call")
-                }
-                className="size-9 rounded-full bg-white/20 flex items-center justify-center
-               text-white hover:bg-white/30 transition-all duration-300"
-                aria-label="Call"
-              >
-                <span className="sr-only">Call</span>
-                <FaPhoneAlt className="text-[15px] pointer-events-none" />
-              </a>
-            </div>
+  {/* ===== Overlay يقفل الدروب داون لما تدوس بره ===== */}
+  {openMenu && (
+    <button
+      onClick={() => setOpenMenu(null)}
+      className="fixed inset-0 z-[99999] cursor-default"
+    />
+  )}
+
+  {/* ===== WhatsApp Icon ===== */}
+  <button
+    type="button"
+    onClick={(e) => {
+      e.stopPropagation();
+      setOpenMenu(openMenu === "wa" ? null : "wa");
+    }}
+    className="size-9 rounded-full bg-white/20 flex items-center justify-center
+    text-white hover:bg-white/30 transition-all duration-300"
+  >
+    <FaWhatsapp className="text-[16px]" />
+  </button>
+
+  {/* ===== Call Icon ===== */}
+  <button
+    type="button"
+    onClick={(e) => {
+      e.stopPropagation();
+      setOpenMenu(openMenu === "call" ? null : "call");
+    }}
+    className="size-9 rounded-full bg-white/20 flex items-center justify-center
+    text-white hover:bg-white/30 transition-all duration-300"
+  >
+    <FaPhoneAlt className="text-[15px]" />
+  </button>
+
+  {/* ===== Dropdown واحدة ===== */}
+  {openMenu && (
+    <div
+      className="absolute top-11 right-0 z-[99999] w-[210px] bg-white rounded-xl shadow-xl border overflow-hidden"
+      onClick={(e) => e.stopPropagation()}
+    >
+      <div className="px-3 py-2 text-xs font-semibold text-gray-500 border-b">
+        {openMenu === "wa" ? "WhatsApp Numbers" : "Call Numbers"}
+      </div>
+
+      <button
+        className="w-full text-left px-4 py-3 text-sm hover:bg-gray-50"
+        onClick={(e) => {
+          setOpenMenu(null);
+          trackAndOpen(
+            e,
+            openMenu === "wa"
+              ? "https://wa.me/971503090203"
+              : "tel:+971503090203",
+            openMenu
+          );
+        }}
+      >
+        0503090203
+      </button>
+
+      <button
+        className="w-full text-left px-4 py-3 text-sm hover:bg-gray-50"
+        onClick={(e) => {
+          setOpenMenu(null);
+          trackAndOpen(
+            e,
+            openMenu === "wa"
+              ? "https://wa.me/971547477777"
+              : "tel:+971547477777",
+            openMenu
+          );
+        }}
+      >
+        0547477777
+      </button>
+    </div>
+  )}
+</div>
           </div>
         </div>
       </div>
@@ -260,7 +299,7 @@ export default function Navbar({ messages, locale }) {
 
      <header
   className={`
-    ${stuck ? "fixed top-0 left-0 w-full z-50" : "relative z-40"}
+    ${stuck ? "fixed top-0 left-0 w-full z-10 " : "relative z-10"}
     border-b border-black/5
     ${stuck ? "bg-white/70 backdrop-blur" : "bg-white"}
   `}
