@@ -22,13 +22,13 @@ export default function Navbar({ messages, locale }) {
   const [openMenu, setOpenMenu] = useState(null);
   const sections = [
     { id: "home", label: t(messages, "nav.home") },
-    { id: "Ourmessage", label: t(messages, "nav.Ourmessage") },
-    { id: "steps", label: t(messages, "nav.steps") },
-    { id: "faq", label: t(messages, "nav.faq") },
-    { id: "contact", label: t(messages, "nav.contact") },
+    { id: "about", label: t(messages, "nav.about") },
+    { id: "services", label: t(messages, "nav.services") },
+    { id: "reviews", label: t(messages, "nav.reviews") },
+  
   ];
 
-  const [activeSection, setActiveSection] = useState("steps");
+  const [activeSection, setActiveSection] = useState("");
 
   // ✅ NEW: sticky only after scroll
   const [stuck, setStuck] = useState(false);

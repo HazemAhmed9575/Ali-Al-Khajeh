@@ -5,7 +5,8 @@ import { t } from "@/i18n/t";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
 import { isValidPhoneNumber } from "libphonenumber-js";
-
+const SHEET_WEBAPP_URL =
+  "https://script.google.com/macros/s/AKfycbwfxbYZ_86IHnMgC2TwNmOViBMqeb3hnPxIptRraYD_b_5H5x2yhK4EbcXFw51qDBY/exec";
 export default function FreeConsultingSection({ messages }) {
   const [loading, setLoading] = useState(false);
   const [status, setStatus] = useState(null); // null | validation | success | error
@@ -41,54 +42,84 @@ export default function FreeConsultingSection({ messages }) {
     );
   }
 
-  async function onSubmit(e) {
-    e.preventDefault();
-    if (loading) return;
+async function onSubmit(e) {
+  e.preventDefault();
+  if (loading) return;
 
-    const form = new FormData(e.currentTarget);
+  const form = new FormData(e.currentTarget);
 
-    const firstName = String(form.get("firstName") || "").trim();
-    const lastName = String(form.get("lastName") || "").trim();
-    const email = String(form.get("email") || "").trim();
-    const message = String(form.get("message") || "").trim();
-    const cleanPhone = phone.replace(/\D/g, "");
+  const firstName = String(form.get("firstName") || "").trim();
+  const lastName = String(form.get("lastName") || "").trim();
+  const email = String(form.get("email") || "").trim();
+  const userMessage = String(form.get("message") || "").trim();
+  const cleanPhone = phone.replace(/\D/g, "");
 
-    // validation بسيط
-    if (!firstName || !lastName || !email || !cleanPhone || !message) {
-      setStatus("validation");
+  if (!firstName || !lastName || !email || !cleanPhone || !userMessage) {
+    setStatus("validation");
+    return;
+  }
+
+  setLoading(true);
+  setStatus(null);
+
+  const name = `${firstName} ${lastName}`;
+  const message = `Message: ${userMessage}`;
+
+  const gclid = localStorage.getItem("gclid") || "";
+
+  try {
+    // ================= EMAIL =================
+    const emailRes = await fetch("/api/contact-us", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        data: {
+          firstName: name,
+          lastName: "-",
+          mail: email,
+          phone: cleanPhone,
+          message: message,
+        },
+      }),
+    });
+
+    if (!emailRes.ok) {
+      console.log("EMAIL FAILED", emailRes.status);
+      setStatus("error");
       return;
     }
 
-    setLoading(true);
-    setStatus(null);
-
-    try {
-      // 🔥 ابعت وخلاص
-      await fetch("/api/contact-us", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          data: {
-            firstName,
-            lastName,
-            mail: email,
-            phone: cleanPhone,
-            message,
-          },
-        }),
+    // ================= SHEET (MASTER STRUCTURE) =================
+    if (gclid) {
+      const params = new URLSearchParams({
+        conversion_time: new Date().toISOString(),
+        conversion_name: "Contact Lead",
+        google_click_id: gclid,
+        conversion_value: "1",
+        conversion_currency: "USD",
+        ad_user_data: "GRANTED",
+        ad_personalization: "GRANTED",
+        name: name,
+        number: cleanPhone,
+        email: email,
+        message: message,
       });
 
-      // ✅ دايمًا Success طالما وصل هنا
-      setStatus("success");
-      e.currentTarget.reset();
-      setPhone("");
-    } catch {
-      // ❌ حتى لو حصل error – اعتبره success
-      setStatus("success");
-    } finally {
-      setLoading(false);
+      await fetch(`${SHEET_WEBAPP_URL}?${params.toString()}`);
     }
+
+    // ================= DONE =================
+    setStatus("success");
+    e.currentTarget.reset();
+    setPhone("");
+
+  } catch (err) {
+    console.log("SHEET ERROR:", err);
+    setStatus("success"); // حتى لو الشيت وقع متوقفش اليوزر
+  } finally {
+    setLoading(false);
   }
+}
 
   return (
     <main

@@ -7,8 +7,9 @@ import { FaWhatsapp } from "react-icons/fa";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
 import { isValidPhoneNumber } from "libphonenumber-js";
+
 const SHEET_WEBAPP_URL =
-  "https://script.google.com/macros/s/AKfycbyDzgU6LjVOtj523vtPyOktiVFIIGW-Xtd50f2kpopz95Zmcop_4gGTikFd-Wti-tJWIg/exec";
+  "https://script.google.com/macros/s/AKfycbwfxbYZ_86IHnMgC2TwNmOViBMqeb3hnPxIptRraYD_b_5H5x2yhK4EbcXFw51qDBY/exec";
 
 export default function ContactSection({ messages, locale }) {
   const [loading, setLoading] = useState(false);

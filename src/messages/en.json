@@ -17,7 +17,8 @@
     "steps": "Steps",
     "faq": "FAQ",
     "reviews": "Testimonials",
-    "Ourmessage":"Our Message"
+    "Ourmessage":"Our Message",
+    "about":"About Us"
   },
   "hero": {
     "title": "Officialize your contracts and transactions from the comfort of your home with Ali Al Khaja Law Firm.",
@@ -354,7 +355,7 @@
     "hero": {
  "titleLine1": "",
   "titleHighlight": "Divorce, Custody, and Khula Cases",
-  "titleLine2": "We guarantee minimal losses with complete confidentiality",
+  "titleLine2": " We guarantee minimal losses with complete confidentiality",
 
   "desc": "At Ali Al Khajeh Law Firm, we finalize divorce, Khula, and custody procedures in the shortest possible time with the least potential losses. Our deep expertise in the new UAE Personal Status Law is your assured protection for your future and your children’s future.",
 
@@ -371,7 +372,7 @@
     "mission": {
       "badge": "Our Mission",
       "title": "Your rights are protected under the new law.",
-      "desc": "We understand the finest details of the 2024 amendments; for example, addiction is now legally recognized as valid grounds for divorce due to harm. At Ali Al Khajeh Law Office, we leverage our expertise to prove and protect your rights with complete confidentiality, ensuring a fresh start as quickly as possible with minimal losses."
+      "desc": "We understand the finest details of the 2024 amendments; for example, addiction is now legally recognized as valid grounds for divorce due to harm. At Ali Al Khajeh Law Office, we leverage our expertise to prove and protect your rights with complete confidentiality, ensuring a fresh start as quickly as possible with minimal "
     },
 
     "services": {
@@ -454,10 +455,6 @@
         "q4": {
           "question": "How does the firm ensure confidentiality of my sensitive case information?",
           "answer": "Confidentiality is our top principle. We apply strict systems in handling documents and information, and our legal team is trained to manage personal status cases with the highest level of discretion and privacy, ensuring that your personal matters remain strictly within the office and court environment."
-        },
-        "q5": {
-          "question": "I am a resident in the UAE — will my home country’s law or UAE law be applied?",
-          "answer": "UAE law is generally the primary law applied, unless one party requests the application of their home country’s law under specific conditions. We specialize in guiding residents to choose the legal path that ensures the best outcome with minimal losses, while also ensuring that the results are legally recognized in their home country."
         }
       }
     },
@@ -895,7 +892,39 @@
   "header": "Who is Ali Al Khajeh? And Why is He Among the Best in the UAE?",
   "paragraph": "Ali Al Khajeh Law Firm was established in 2016 by Ali Al Khajeh, a lawyer, legal consultant, private notary public, and certified contract authenticator. He began his professional journey immediately after graduating from the Dubai Police Academy and has received numerous honors and recognitions, including a Certificate of Appreciation from the Abu Dhabi Chamber of Commerce in 2018, recognition from the Abu Dhabi Judicial Department in 2019, and his firm ranking fourth among the Top 100 Law Firms under the Nafis Initiative at the Commercial Partial Cases Performance Conference held in Dubai in 2022.",
   "button": "Request Consultation"
-}
+},
+ "servicesCenter": {
+    "hero": {
+      "title": "Legal Leadership in the Heart of the UAE",
+      "subtitle": "Comprehensive legal solutions for waiving lawsuits"
+    },
+     "about": {
+      "name": "Consultant Ali Al Khajeh",
+      "description": "With extensive experience in the judicial system of the United Arab Emirates, Consultant Ali Al Khajeh leads the team in delivering legal consultations and documentation services with the highest standards of accuracy and transparency.",
+      "imageAlt": "Consultant Ali Al Khajeh"
+    },
+       "forms": {
+      "title": "Digital Services Center",
+      "subtitle": "Fast and premium legal procedures at your fingertips",
+      "requestType": "Request Type",
+      "reportNumber": "Report Number",
+      "reportNumberPlaceholder": "Enter report number",
+      "policeStation": "Police Station",
+      "policeStationPlaceholder": "Station name",
+      "caseNumber": "Case Number",
+      "caseNumberPlaceholder": "Enter case number",
+      "prosecution": "Public Prosecution",
+      "prosecutionPlaceholder": "Prosecution name",
+      "waverName": "Waiver Name",
+      "waverId": "Waiver ID (First Party)",
+      "beneficiaryName": "Beneficiary Name",
+      "beneficiaryId": "Beneficiary ID (Second Party)",
+      "fullNamePlaceholder": "Full Name",
+      "idPlaceholder": "ID Number",
+      "attachments": "Attach a file (passport or ID)",
+      "submit": "Submit  Request"
+    }
+  }
 
 
 }

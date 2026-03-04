@@ -5,6 +5,7 @@ import { FaWhatsapp, FaPhoneAlt } from "react-icons/fa";
 import { FaWpforms } from "react-icons/fa6";
 import { HiOutlineChatBubbleLeftRight } from "react-icons/hi2";
 import { t } from "@/i18n/t";
+import { trackClick } from "@/app/utils/clickTracker";
 
 export default function FloatingActions({
   phone = "+971503090203",
@@ -118,26 +119,40 @@ export default function FloatingActions({
      
 
           {/* WhatsApp */}
-          <a
-            href={waLink}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center justify-center
-            w-14 h-14 rounded-2xl bg-[#25D366] text-white
-            shadow-lg hover:scale-105 transition-all"
-          >
-            <FaWhatsapp className="text-[26px]" />
-          </a>
+      <button
+  onClick={async (e) => {
+    e.preventDefault();
+
+    await trackClick({
+      type: "wa",
+      number: phone,
+    });
+
+    window.open(waLink, "_blank");
+  }}
+  className="w-14 h-14 rounded-2xl bg-[#25D366] text-white cursor-pointer
+  flex items-center justify-center shadow-lg"
+>
+  <FaWhatsapp className="text-[26px]" />
+</button>
 
           {/* Call */}
-          <a
-            href={telLink}
-            className="flex items-center justify-center
-            w-14 h-14 rounded-2xl bg-[#85754E] text-[#0b1220]
-            shadow-lg hover:scale-105 transition-all"
-          >
-            <FaPhoneAlt className="text-[22px]" />
-          </a>
+      <button
+  onClick={async (e) => {
+    e.preventDefault();
+
+    await trackClick({
+      type: "call",
+      number: phone,
+    });
+
+    window.location.href = telLink;
+  }}
+  className="w-14 h-14 rounded-2xl bg-[#85754E] text-[#0b1220] cursor-pointer
+  flex items-center justify-center shadow-lg"
+>
+  <FaPhoneAlt className="text-[22px]" />
+</button>
         </div>
       </div>
     </>

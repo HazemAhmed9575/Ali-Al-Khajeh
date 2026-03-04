@@ -8,7 +8,7 @@ import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
 import { isValidPhoneNumber } from "libphonenumber-js";
 const SHEET_WEBAPP_URL =
-  "https://script.google.com/macros/s/AKfycbyDzgU6LjVOtj523vtPyOktiVFIIGW-Xtd50f2kpopz95Zmcop_4gGTikFd-Wti-tJWIg/exec";
+  "https://script.google.com/macros/s/AKfycbwfxbYZ_86IHnMgC2TwNmOViBMqeb3hnPxIptRraYD_b_5H5x2yhK4EbcXFw51qDBY/exec";
 export default function ContactSection({ messages, locale }) {
   const [loading, setLoading] = useState(false);
   const [status, setStatus] = useState(null);
@@ -24,15 +24,14 @@ async function onSubmit(e) {
   if (loading) return;
 
   const form = new FormData(e.currentTarget);
-  const name = String(form.get("name") || "").trim();
-  const message = String(form.get("message") || "").trim();
+
+  const firstName = String(form.get("firstName") || "").trim();
+  const lastName = String(form.get("lastName") || "").trim();
+  const email = String(form.get("email") || "").trim();
+  const userMessage = String(form.get("message") || "").trim();
   const cleanPhone = phone.replace(/\D/g, "");
 
-  const validPhone =
-    cleanPhone.length > 0 && isValidPhoneNumber("+" + cleanPhone);
-
-  if (!name || message === "" || !validPhone) {
-    setErrors({ phone: !validPhone });
+  if (!firstName || !lastName || !email || !cleanPhone || !userMessage) {
     setStatus("validation");
     return;
   }
@@ -40,42 +39,51 @@ async function onSubmit(e) {
   setLoading(true);
   setStatus(null);
 
-  try {
+  const name = `${firstName} ${lastName}`;
+  const message = `Message: ${userMessage}`;
 
+  const gclid = localStorage.getItem("gclid") || "";
+
+  try {
     // ================= EMAIL =================
-    await fetch("/api/contact-us", {
+    const emailRes = await fetch("/api/contact-us", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
         data: {
           firstName: name,
           lastName: "-",
-          mail: "no@email.com",
+          mail: email,
           phone: cleanPhone,
-          message,
+          message: message,
         },
       }),
     });
 
-    // ================= GOOGLE SHEET =================
-    const gclid = localStorage.getItem("gclid") || "";
+    if (!emailRes.ok) {
+      console.log("EMAIL FAILED", emailRes.status);
+      setStatus("error");
+      return;
+    }
 
-    const sheetForm = new FormData();
-    sheetForm.append("google_id", gclid || "no_gclid");
-    sheetForm.append("conversion_name", "Contact Lead");
-    sheetForm.append("conversion_time", new Date().toISOString());
-    sheetForm.append("conversion_value", 1);
-    sheetForm.append("conversion_currency", "USD");
-    sheetForm.append("name", name);
-    sheetForm.append("number", cleanPhone);
-    sheetForm.append("email", "no@email.com");
-    sheetForm.append("message", message);
+    // ================= SHEET (MASTER STRUCTURE) =================
+    if (gclid) {
+      const params = new URLSearchParams({
+        conversion_time: new Date().toISOString(),
+        conversion_name: "Contact Lead",
+        google_click_id: gclid,
+        conversion_value: "1",
+        conversion_currency: "USD",
+        ad_user_data: "GRANTED",
+        ad_personalization: "GRANTED",
+        name: name,
+        number: cleanPhone,
+        email: email,
+        message: message,
+      });
 
-    await fetch(SHEET_WEBAPP_URL, {
-      method: "POST",
-      body: sheetForm,
-      mode: "no-cors",
-    });
+      await fetch(`${SHEET_WEBAPP_URL}?${params.toString()}`);
+    }
 
     // ================= DONE =================
     setStatus("success");
@@ -84,7 +92,7 @@ async function onSubmit(e) {
 
   } catch (err) {
     console.log("SHEET ERROR:", err);
-    setStatus("success"); // ما توقفش اليوزر
+    setStatus("success"); // حتى لو الشيت وقع متوقفش اليوزر
   } finally {
     setLoading(false);
   }
