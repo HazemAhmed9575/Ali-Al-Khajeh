@@ -18,7 +18,7 @@ export default function CustomSelect({ type, setType }) {
       {/* Selected Box */}
       <div
         onClick={() => setOpen(!open)}
-        className="bg-[#e5e5e5] border-2 border-[#d4b26a] rounded-xl p-4 flex justify-between items-center cursor-pointer"
+        className="bg-[#ffff] border-2 border-[#85754E] rounded-xl p-4 flex justify-between items-center cursor-pointer"
       >
         <span className="text-[#0f2a44] font-semibold">
           {selected?.label || "اختر النوع"}
@@ -37,7 +37,7 @@ export default function CustomSelect({ type, setType }) {
 
       {/* Dropdown */}
       {open && (
-        <div className="absolute mt-2 w-full bg-white rounded-xl shadow-lg border border-[#d4b26a] overflow-hidden z-50">
+        <div className="absolute mt-2 w-full bg-white rounded-xl shadow-lg border border-[#85754E] overflow-hidden z-50">
           {options.map((option) => (
             <div
               key={option.value}

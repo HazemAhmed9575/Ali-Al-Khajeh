@@ -16,7 +16,7 @@ export default function Footer({ messages, locale }) {
     <footer className="bg-gray-900 text-gray-300 py-12 border-t border-gray-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-        <div className="flex justify-between mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
 
           {/* Logo + About */}
           <div>
@@ -46,7 +46,32 @@ export default function Footer({ messages, locale }) {
             </p>
           </div>
 
-      
+          {/* Quick Links */}
+          <div>
+            <h4 className="text-white font-bold mb-6 font-display">
+              {t(messages, "personalStatus.footer.quickLinks.title")}
+            </h4>
+            <ul className="space-y-3 text-sm">
+              <li><a href="#" className="hover:text-[#85754E] transition-colors">{t(messages, "personalStatus.footer.quickLinks.about")}</a></li>
+              <li><a href="#" className="hover:text-[#85754E] transition-colors">{t(messages, "personalStatus.footer.quickLinks.practice")}</a></li>
+              <li><a href="#" className="hover:text-[#85754E] transition-colors">{t(messages, "personalStatus.footer.quickLinks.team")}</a></li>
+              <li><a href="#" className="hover:text-[#85754E] transition-colors">{t(messages, "personalStatus.footer.quickLinks.blog")}</a></li>
+            </ul>
+          </div>
+
+          {/* Services */}
+          <div>
+            <h4 className="text-white font-bold mb-6 font-display">
+              {t(messages, "personalStatus.footer.services.title")}
+            </h4>
+            <ul className="space-y-3 text-sm">
+              <li><a href="#" className="hover:text-[#85754E]">{t(messages, "personalStatus.footer.services.litigation")}</a></li>
+              <li><a href="#" className="hover:text-[#85754E]">{t(messages, "personalStatus.footer.services.contracts")}</a></li>
+              <li><a href="#" className="hover:text-[#85754E]">{t(messages, "personalStatus.footer.services.debts")}</a></li>
+              <li><a href="#" className="hover:text-[#85754E]">{t(messages, "personalStatus.footer.services.labor")}</a></li>
+            </ul>
+          </div>
+
           {/* Contact */}
           <div>
             <h4 className="text-white font-bold mb-6 font-display">
